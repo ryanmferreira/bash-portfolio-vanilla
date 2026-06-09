@@ -1,0 +1,84 @@
+/* --- FONTS --- */
+@font-face {
+    font-family: 'Ubuntu Mono';
+    src: url('../fonts/ubuntu/ubuntu-mono-regular.ttf') format('truetype');
+}
+
+/* --- SYSTEM VARIABLES --- */
+:root {
+    --bg-main: #060a08;
+    --bg-terminal: #070c0a;
+    --bg-bar: #141e19;
+    --color-green: #22BF11;
+    --color-purple: #C978FF;
+    --color-orange: #FFA72D;
+    --color-red: #ff3737;
+    --color-leaf: #8cd977;
+    --color-blue: #4da6ff;
+    --color-muted: #2f4036;
+    --color-silver: rgb(149, 149, 149);
+    --color-text: #ffffff;
+    --font-mono: 'Ubuntu Mono', monospace;
+}
+
+/* --- GLOBAL RESETS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-mono) !important;
+}
+
+/* --- CHROMA COLOR UTILITIES --- */
+.orange {
+    color: var(--color-orange) !important;
+}
+
+.blue {
+    color: var(--color-blue) !important;
+}
+
+.red {
+    color: var(--color-red) !important;
+}
+
+.silver {
+    color: var(--color-silver) !important;
+}
+
+/* --- NATIVE ELEMENTS --- */
+body {
+    background-color: var(--bg-main);
+    color: var(--color-leaf);
+    font-family: var(--font-mono) !important;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 18px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-green);
+    margin-bottom: 16px;
+    font-weight: normal;
+    font-size: 1.3rem;
+}
+
+h3 {
+    font-size: 1.05rem;
+    color: var(--color-text);
+}
+
+p {
+    color: var(--color-text);
+}
+
+.dashed {
+    border: none;
+    border-top: 2px dashed var(--color-muted);
+    margin: 24px 0 16px 0;
+    width: 100%;
+}

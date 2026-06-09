@@ -1,0 +1,154 @@
+/* --- MAIN WRAPPERS --- */
+.terminal-body {
+    padding: 18px;
+}
+
+main {
+    border: 2px solid var(--color-muted);
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 0.85rem;
+}
+
+/* --- CORE GRIDS & RESPONSIVE DESIGN --- */
+.terminal-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+@media (min-width: 900px) {
+    .terminal-layout-grid {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+@media(max-width: 720px) {
+    .terminal-container {
+        max-width: 95% !important;
+    }
+}
+
+/* --- BASH INTERACTION & CURSOR --- */
+.bash-prompt {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.prompt-user {
+    color: var(--color-orange);
+}
+
+.prompt-path {
+    color: var(--color-blue);
+}
+
+.terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    background-color: var(--color-green);
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* --- CONTENT CONTAINERS (TUI-BOX) --- */
+.tui-box {
+    border: 2px solid var(--color-muted);
+    padding: 18px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: 18px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.tui-box:hover {
+    border-color: var(--color-green);
+}
+
+.tui-box-title {
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    background-color: var(--bg-terminal);
+    padding: 0 8px;
+    color: var(--color-purple);
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid var(--color-muted);
+}
+
+.tui-box p {
+    margin-bottom: 10px;
+}
+
+.config-block,
+.ascii-table {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--color-leaf);
+    margin: 10px 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.ascii-table-header {
+    color: var(--color-text);
+    border-bottom: 1px dashed var(--color-muted);
+    padding-bottom: 2px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+/* --- VERTICAL MONITOR SIDEBAR --- */
+.tui-sidebar {
+    border: 2px solid var(--color-muted);
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 0.85rem;
+}
+
+.sidebar-section {
+    margin-bottom: 18px;
+}
+
+.sidebar-title {
+    color: var(--color-green);
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.sidebar-item {
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+    color: var(--color-text);
+}
+
+/* --- ABOUT PAGE BUTTONS --- */
+.about-link {
+    color: var(--color-green);
+    text-decoration: none;
+}
+
+.about-link:hover {
+    background-color: var(--color-green);
+    color: var(--bg-main);
+}

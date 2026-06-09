@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bash - /home/ryanf/gallery</title>
-    <link rel="stylesheet" href="../styles/style.css">
+
+    <link rel="stylesheet" href="../styles/global-styles.css">
+    <link rel="stylesheet" href="../styles/tui-components.css">
+    <link rel="stylesheet" href="../styles/tui-layouts.css">
+    <link rel="stylesheet" href="../styles/tui-gallery.css">
 
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
 </head>
@@ -24,7 +28,7 @@
 
         <div class="menu-bar">
             <div class="menu-dropdown">
-                <button class="menu-bar-item" onclick="toggleDropdown('dropdown-file')">Arquivo</button>
+                <button class="menu-bar-item">Arquivo</button>
                 <div id="dropdown-file" class="dropdown-content">
                     <a href="../index.html" class="dropdown-link">[ Reiniciar] </a>
                     <a href="#" class="dropdown-link" onclick="window.close()">[ Sair ]</a>
@@ -35,10 +39,10 @@
                 <button class="menu-bar-item">Sobre</button>
                 <div id="dropdown-about" class="dropdown-content">
                     <span class="dropdown-text orange">[ Versão: 0.0.1-dev ]</span>
-                    <span class="dropdown-text blue"><a href="https://github.com/ryanmferreira" rel="noopener"
-                            target="_blank" class="dropdown-link">[ Dev1: Ryan Github Profile ]</a></span>
-                    <span class="dropdown-text blue"><a href="https://github.com/MuriloAndrade28" rel="noopener"
-                            target="_blank" class="dropdown-link">[ Dev2: Murilo Github Profile ]</a></span>
+                    <span><a href="https://github.com/ryanmferreira" rel="noopener" target="_blank"
+                            class="dropdown-text blue dropdown-link">[ Dev1: Ryan Github Profile ]</a></span>
+                    <span><a href="https://github.com/MuriloAndrade28" rel="noopener" target="_blank"
+                            class="dropdown-text blue dropdown-link">[ Dev2: Murilo Github Profile ]</a></span>
                     <hr class="dropdown-divider">
                     <a href="https://github.com/ryanmferreira/hci-tui-portfolio" rel="noopener" target="_blank"
                         class="dropdown-link">[ GitHub Repo
