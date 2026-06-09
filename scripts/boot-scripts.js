@@ -16,7 +16,7 @@ const logs = [
     "[ <span class='boot-error'>FAIL</span> ] The website creator simulated a software error to test the system's behavior.",
     "[  <span class='boot-ok'>OK</span>  ] Allocating kernel memory blocks for user environment...",
     "[ <span class='boot-error'>FAIL</span> ] Coffee provider service down: 0 cups detected.",
-    "[  <span class='boot-ok'>OK</span>  ] Bypassing simulation crash... Kernel state restored to nominal.",
+    "[  <span class='boot-warn'>WARN</span>  ] Bypassing simulation crash... Kernel state restored to nominal.",
     "[  <span class='boot-ok'>OK</span>  ] Disregarding fatal coffee deficit... Continuing on pure caffeine debt.",
     "[  <span class='boot-ok'>OK</span>  ] Loading customized environment parameters and user configs...",
     "[  <span class='boot-ok'>OK</span>  ] Initializing terminal graphical server..."
@@ -29,7 +29,7 @@ let currentLog = 0;
 const totalLogTime = logs.length * LOG_INTERVAL_MS;
 
 setTimeout(() => {
-    progressBar.style.transition = `width ${totalLogTime}ms linear`;
+    progressBar.style.transition = `width ${totalLogTime}ms ease-out`;
     progressBar.style.width = '100%';
 }, PROGRESS_BAR_START_DELAY_MS);
 
@@ -41,7 +41,6 @@ const bootInterval = setInterval(() => {
         logContainer.scrollTop = logContainer.scrollHeight;
         currentLog++;
     } else {
-        clearInterval(bootInterval);
         document.body.style.opacity = '0';
         document.body.style.transition = `opacity ${REDIRECT_FADE_OUT_MS}ms ease`;
         setTimeout(() => {
