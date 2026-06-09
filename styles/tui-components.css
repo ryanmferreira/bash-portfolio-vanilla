@@ -169,3 +169,31 @@ footer {
     font-size: 0.85rem;
     color: var(--color-muted);
 }
+
+.shortcuts-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-terminal);
+    border: 2px solid var(--color-green);
+    padding: 16px;
+    min-width: 50%;
+    min-height: 50%;
+    z-index: 1000;
+    display: none;
+}
+
+.shortcuts-modal-close {
+    position: absolute;
+    top: -16px;
+    right: 16px;
+    padding: 32px;
+    background: var(--bg-main);
+    border: none;
+    color: var(--color-leaf);
+    font-family: var(--font-mono) !important;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0;
+}

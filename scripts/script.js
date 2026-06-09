@@ -23,17 +23,30 @@ document.addEventListener('contextmenu', function (event) {
 });
 
 document.addEventListener("keydown", (e) => {
-
     if (e.key === '1') {
         window.location.assign(HOME);
     }
+
     if (e.key === '2') {
         window.location.assign(GALLERY);
     }
+
     if (e.key === '3') {
         window.location.assign(ABOUT);
     }
 });
+
+function toggleShorcutsView() {
+    const modal = document.querySelector(".shortcuts-modal");
+
+    const isVisible = window.getComputedStyle(modal).display === "block";
+
+    if (isVisible) {
+        modal.style.display = "none";
+    } else {
+        modal.style.display = "block";
+    }
+}
 
 function updatePreview(selectedRow, imgSrc, title, desc, date) {
     const mainImg = document.getElementById("main-view-img");
