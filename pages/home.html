@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bash - /home/ryanf</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <span class="terminal-title">[-] Main Window [bash - ryanf@fatec-itu: /etc]</span>
+            <div class="terminal-window-buttons">
+                <button class="tui-window-btn blue">[ - ]</button>
+                <button class="tui-window-btn orange">[ + ]</button>
+                <button class="tui-window-btn red">[ X ]</button>
+            </div>
+        </div>
+
+        <div class="menu-bar">
+            <div class="menu-dropdown">
+                <button class="menu-bar-item">Arquivo</button>
+                <div id="dropdown-file" class="dropdown-content">
+                    <a href="index.html" class="dropdown-link">[ Reiniciar] </a>
+                    <a href="#" class="dropdown-link" onclick="window.close()">[ Sair ]</a>
+                </div>
+            </div>
+
+            <div class="menu-dropdown">
+                <button class="menu-bar-item">Sobre</button>
+                <div id="dropdown-about" class="dropdown-content">
+                    <span class="dropdown-text orange">[ Versão: 0.0.1-stable ]</span>
+                    <span class="dropdown-text blue">[ Devs: Ryan & Murilo ]</span>
+                    <hr class="dropdown-divider">
+                    <a href="https://github.com" rel="noopener" target="_blank" class="dropdown-link">[ GitHub Repo
+                        ]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="terminal-body">
+            <nav class="tui-navbar">
+                <a href="index.html" class="tui-btn active">[ F1-HOME ]</a>
+                <a href="gallery.html" class="tui-btn">[ F2-GALERIA ]</a>
+                <a href="about.html" class="tui-btn">[ F3-SOBRE ]</a>
+            </nav>
+
+            <div class="terminal-layout-grid">
+
+                <main>
+                    <div class="bash-prompt">
+                        <span class="prompt-user">ryanf@fatec-itu</span>:<span class="prompt-path">/etc</span>$ cat
+                        info_meio_ambiente.md
+                    </div>
+
+                    <section class="tui-box">
+                        <span class="tui-box-title">-- Output: info_meio_ambiente.md --</span>
+                        <h1>Dia Mundial do Meio Ambiente - 5 de Junho</h1>
+                        <p>Organizado globalmente para incentivar a conscientização ecológica, o Dia Mundial do Meio
+                            Ambiente foi instituído pela ONU em 1972 durante a Conferência de Estocolmo. Este projeto
+                            opera como uma matriz digital aplicando engenharia de IHC para documentar ecossistemas
+                            urbanos.</p>
+                    </section>
+
+                    <hr class="dashed">
+
+                    <div class="bash-prompt">
+                        <span class="prompt-user">ryanf@fatec-itu</span>:<span class="prompt-path">/dev</span>$ vdir -h
+                        --classify
+                    </div>
+
+                    <section class="tui-box">
+                        <span class="tui-box-title">-- Output: vdir_flora --</span>
+                        <h2>Mapeamento da Flora Urbana</h2>
+                        <p>Os registros gráficos indexados na aba de dados expõem as variedades botânicas da Fatec Itu.
+                            Toda a coleta de informações em campo foi executada de forma autoral utilizando uma câmera
+                            Samsung ES25 legado.</p>
+                    </section>
+
+                    <hr class="dashed">
+
+                    <div class="bash-prompt">
+                        <span class="prompt-user">ryanf@fatec-itu</span>:<span class="prompt-path">/~</span>$ <span
+                            class="terminal-cursor"></span>
+                    </div>
+                </main>
+
+                <aside class="tui-sidebar">
+                    <div class="sidebar-section">
+                        <div class="sidebar-title">> SYSTEM MONITOR</div>
+                        <div class="sidebar-item">OS : Linux x86_64</div>
+                        <div class="sidebar-item">HOST : fatec-itu</div>
+                        <div class="sidebar-item">KERNEL : 6.1.0-tui</div>
+                        <div class="sidebar-item">UPTIME : 4h 12m</div>
+                    </div>
+                    <div class="sidebar-section">
+                        <div class="sidebar-title">> RESOURCES</div>
+                        <div class="sidebar-item">CPU [#####.....] 52%</div>
+                        <div class="sidebar-item">RAM [###.......] 31%</div>
+                        <div class="sidebar-item">SWP [..........] 0%</div>
+                    </div>
+                    <div class="sidebar-section">
+                        <div class="sidebar-title">> REPOSITÓRIO</div>
+                        <div class="sidebar-item">BRANCH : main</div>
+                        <div class="sidebar-item">STATUS : STABLE</div>
+                    </div>
+                </aside>
+
+            </div>
+
+            <div class="tui-statusbar">
+                <div class="statusbar-left">
+                    <span>Módulo: HOME</span>
+                    <span>[RO]</span>
+                    <span>TTY: pts/0</span>
+                </div>
+                <div class="statusbar-right">
+                    <span>BUFFER: OK</span>
+                    <span>UTF-8</span>
+                    <span>100%</span>
+                </div>
+            </div>
+
+            <footer>
+                <p>Projeto IHC - Fatec Itu. Ryan & Murilo. 2026.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+</body>
+
+</html>

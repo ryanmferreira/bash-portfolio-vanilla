@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bash - /home/ryanf/gallery</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <span class="terminal-title">[-] Main Window [bash - ryanf@fatec-itu: /etc]</span>
+            <div class="terminal-window-buttons">
+                <button class="tui-window-btn blue">[ - ]</button>
+                <button class="tui-window-btn orange">[ + ]</button>
+                <button class="tui-window-btn red">[ X ]</button>
+            </div>
+        </div>
+
+        <div class="menu-bar">
+            <div class="menu-dropdown">
+                <button class="menu-bar-item">Arquivo</button>
+                <div id="dropdown-file" class="dropdown-content">
+                    <a href="../index.html" class="dropdown-link">[ Reiniciar] </a>
+                    <a href="#" class="dropdown-link" onclick="window.close()">[ Sair ]</a>
+                </div>
+            </div>
+
+            <div class="menu-dropdown">
+                <button class="menu-bar-item">Sobre</button>
+                <div id="dropdown-about" class="dropdown-content">
+                    <span class="dropdown-text orange">[ Versão: 0.0.1-stable ]</span>
+                    <span class="dropdown-text blue">[ Devs: Ryan & Murilo ]</span>
+                    <hr class="dropdown-divider">
+                    <a href="https://github.com" rel="noopener" target="_blank" class="dropdown-link">[ GitHub Repo
+                        ]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="terminal-body">
+            <nav class="tui-navbar">
+                <a href="../index.html" class="tui-btn">[ F1-HOME ]</a>
+                <a href="gallery.html" class="tui-btn active">[ F2-GALERIA ]</a>
+                <a href="about.html" class="tui-btn">[ F3-SOBRE ]</a>
+            </nav>
+
+            <div class="terminal-layout-grid">
+
+                <main>
+                    <div class="bash-prompt">
+                        <span class="prompt-user">ryanf@fatec-itu</span>:<span
+                            class="prompt-path">/mount/storage</span>$ tui-imgview --target=CAPTURA_001.JPG
+                    </div>
+
+                    <section class="tui-box preview-container">
+                        <span class="tui-box-title">-- Image Preview: <span id="view-title">CAPTURA_001.JPG</span>
+                            --</span>
+
+                        <div class="preview-layout">
+                            <div class="preview-media">
+                                <img id="main-view-img" src="../imgs/f0006272.jpg" alt="Visualização ativa">
+                            </div>
+                            <div class="preview-data">
+                                <div class="ascii-table-header">METADADOS EXIF (SAMSUNG ES25)</div>
+                                <div>[ARQUIVO] : <span id="meta-file">f0006272.jpg</span></div>
+                                <div>[CATEGORIA]: <span id="meta-desc">Mato (Matus)</span></div>
+                                <div>[DATA/LOC] : <span id="meta-date">X/05/2026 - FATEC</span></div>
+                                <div>[OP_CAMER] : <span>Ryan Ferreira</span></div>
+                                <div>[STATUS] : <span class="orange">INDEXED_OK</span></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="dashed">
+
+                    <div class="bash-prompt">
+                        <span class="prompt-user">ryanf@fatec-itu</span>:<span
+                            class="prompt-path">/mount/storage</span>$ ls -la ./imgs/ --classify
+                    </div>
+
+                    <section class="tui-box">
+                        <span class="tui-box-title">-- File Index: 4 items found --</span>
+                        <div class="tui-table-container">
+                            <table class="tui-file-table">
+                                <thead>
+                                    <tr>
+                                        <th>PERMISSÕES</th>
+                                        <th>TAMANHO</th>
+                                        <th>NOME DO ARQUIVO</th>
+                                        <th>AÇÃO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="file-row active"
+                                        onclick="updatePreview('../imgs/f0006272.jpg', 'CAPTURA_001.JPG', 'f0006272.jpg', 'Mato (Matus)', '12/05/2026 - FATEC Itu')">
+                                        <td>-rw-r--r--</td>
+                                        <td>2.4M</td>
+                                        <td class="blue">CAPTURA_001.JPG*</td>
+                                        <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
+                                    </tr>
+                                    <tr class="file-row"
+                                        onclick="updatePreview('../imgs/f0012416.jpg', 'CAPTURA_002.JPG', 'f0012416.jpg', 'Mato (Matus)', '14/05/2026 - FATEC Itu')">
+                                        <td>-rw-r--r--</td>
+                                        <td>1.9M</td>
+                                        <td class="blue">CAPTURA_002.JPG*</td>
+                                        <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
+                                    </tr>
+                                    <tr class="file-row"
+                                        onclick="updatePreview('../imgs/f0087040.jpg', 'CAPTURA_003.JPG', 'f0087040.jpg', 'Mato (Matus)', '15/05/2026 - FATEC Itu')">
+                                        <td>-rw-r--r--</td>
+                                        <td>3.1M</td>
+                                        <td class="blue">CAPTURA_003.JPG*</td>
+                                        <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
+                                    </tr>
+                                    <tr class="file-row"
+                                        onclick="updatePreview('../imgs/f0051008.jpg', 'CAPTURA_004.JPG', 'f0051008.jpg', 'Mato (Matus)', '19/05/2026 - FATEC Itu')">
+                                        <td>-rw-r--r--</td>
+                                        <td>2.7M</td>
+                                        <td class="blue">CAPTURA_004.JPG*</td>
+                                        <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
+                                    </tr>
+                                    <tr class="file-row"
+                                        onclick="updatePreview('../imgs/f0051008.jpg', 'CAPTURA_004.JPG', 'f0051008.jpg', 'Mato (Matus)', '19/05/2026 - FATEC Itu')">
+                                        <td>-rw-r--r--</td>
+                                        <td>2.7M</td>
+                                        <td class="blue">CAPTURA_004.JPG*</td>
+                                        <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
+                                    </tr>
+                                    <tr class="file-row"
+                                        onclick="updatePreview('../imgs/f0051008.jpg', 'CAPTURA_004.JPG', 'f0051008.jpg', 'Mato (Matus)', '19/05/2026 - FATEC Itu')">
+                                        <td>-rw-r--r--</td>
+                                        <td>2.7M</td>
+                                        <td class="blue">CAPTURA_004.JPG*</td>
+                                        <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
+                                    </tr>
+                                    <tr class="file-row"
+                                        onclick="updatePreview('../imgs/f0051008.jpg', 'CAPTURA_004.JPG', 'f0051008.jpg', 'Mato (Matus)', '19/05/2026 - FATEC Itu')">
+                                        <td>-rw-r--r--</td>
+                                        <td>2.7M</td>
+                                        <td class="blue">CAPTURA_004.JPG*</td>
+                                        <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
+                                    </tr>
+                                    <tr class="file-row"
+                                        onclick="updatePreview('../imgs/f0051008.jpg', 'CAPTURA_004.JPG', 'f0051008.jpg', 'Mato (Matus)', '19/05/2026 - FATEC Itu')">
+                                        <td>-rw-r--r--</td>
+                                        <td>2.7M</td>
+                                        <td class="blue">CAPTURA_004.JPG*</td>
+                                        <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <hr class="dashed">
+
+                    <div class="bash-prompt">
+                        <span class="prompt-user">ryanf@fatec-itu</span>:<span
+                            class="prompt-path">/mount/storage</span>$ <span class="terminal-cursor"></span>
+                    </div>
+                </main>
+
+                <aside class="tui-sidebar">
+                    <div class="sidebar-section">
+                        <div class="sidebar-title">> STORAGE MONITOR</div>
+                        <div class="sidebar-item">TOTAL : 4 arquivos</div>
+                        <div class="sidebar-item">FORMATS : .JPG (EXIF v2)</div>
+                        <div class="sidebar-item">MOUNT : /mnt/storage</div>
+                        <div class="sidebar-item">SECTOR : 0x800FF32A</div>
+                    </div>
+                    <div class="sidebar-section">
+                        <div class="sidebar-title">> I/O STATUS</div>
+                        <div class="sidebar-item">READ [########..] 82%</div>
+                        <div class="sidebar-item">WRITE [..........] 0%</div>
+                    </div>
+                </aside>
+
+            </div>
+
+            <div class="tui-statusbar">
+                <div class="statusbar-left">
+                    <span>Módulo: GALERIA</span>
+                    <span>[LIST]</span>
+                    <span>FILES: 4/4</span>
+                </div>
+                <div class="statusbar-right">
+                    <span>MEDIA_DRV</span>
+                    <span>RAW</span>
+                </div>
+            </div>
+
+            <footer>
+                <p>Projeto IHC - Fatec Itu. Ryan & Murilo. 2026.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+
+</body>
+
+</html>

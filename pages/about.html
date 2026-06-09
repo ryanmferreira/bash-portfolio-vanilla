@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bash - /home/ryanf/about</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <span class="terminal-title">[-] Main Window [bash - ryanf@fatec-itu: /etc]</span>
+            <div class="terminal-window-buttons">
+                <button class="tui-window-btn blue">[ - ]</button>
+                <button class="tui-window-btn orange">[ + ]</button>
+                <button class="tui-window-btn red">[ X ]</button>
+            </div>
+        </div>
+
+        <div class="menu-bar">
+            <div class="menu-dropdown">
+                <button class="menu-bar-item">Arquivo</button>
+                <div id="dropdown-file" class="dropdown-content">
+                    <a href="../index.html" class="dropdown-link">[ Reiniciar] </a>
+                    <a href="#" class="dropdown-link" onclick="window.close()">[ Sair ]</a>
+                </div>
+            </div>
+
+            <div class="menu-dropdown">
+                <button class="menu-bar-item">Sobre</button>
+                <div id="dropdown-about" class="dropdown-content">
+                    <span class="dropdown-text orange">[ Versão: 0.0.1-stable ]</span>
+                    <span class="dropdown-text blue">[ Devs: Ryan & Murilo ]</span>
+                    <hr class="dropdown-divider">
+                    <a href="https://github.com" rel="noopener" target="_blank" class="dropdown-link">[ GitHub Repo
+                        ]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="terminal-body">
+            <nav class="tui-navbar">
+                <a href="../index.html" class="tui-btn">[ F1-HOME ]</a>
+                <a href="gallery.html" class="tui-btn">[ F2-GALERIA ]</a>
+                <a href="about.html" class="tui-btn active">[ F3-SOBRE ]</a>
+            </nav>
+
+            <div class="terminal-layout-grid">
+
+                <main>
+                    <div class="bash-prompt">
+                        <span class="prompt-user">ryanf@fatec-itu</span>:<span class="prompt-path">/proc</span>$ cat
+                        /etc/hostname && cat ./ihc_status.log
+                    </div>
+
+                    <div class="tui-box">
+                        <span class="tui-box-title">-- File: operators.cfg --</span>
+                        <h3 class="orange">Operadores Responsáveis</h3>
+                        <p>Ryan Ferreira -> <a href="mailto:dev.ryanmferreira@outlook.com"
+                                class="about-link">dev.ryanmferreira@outlook.com</a></p>
+                        <p>Murilo Andrade -> <a href="mailto:murilorossideandrade@gmail.com"
+                                class="about-link">murilorossideandrade@gmail.com</a></p>
+                    </div>
+
+                    <div class="tui-box">
+                        <span class="tui-box-title">-- File: hardware.cfg --</span>
+                        <h3 class="orange">Hardware de Captura de Mídia</h3>
+                        <p>Equipamento: Câmera Fotográfica Compacta Samsung ES25</p>
+                        <p>Especificações: Sensor CCD de 12.2 Megapixels lançado no ano de 2010.</p>
+                    </div>
+
+                    <div class="tui-box">
+                        <span class="tui-box-title">-- File: core.conf --</span>
+                        <h2>Visão do Sistema e Decisões de IHC</h2>
+
+                        <p class="config-block">[ihc_system_parameters]</p>
+                        <p class="config-block">visibility_status = "high_contrast_active"</p>
+                        <p class="config-block">visual_fatigue_risk = "prevented_via_chroma_reduction"</p>
+                        <p class="config-block">color_palette = "phosphor_green_v2"</p>
+                        <p class="config-block">font_family = "monospaced_courier"</p>
+                        <p class="config-block">interface_paradigm = "text_user_interface_tui"</p>
+
+                        <p class="silver"># A arquitetura deste console digital aplica os fundamentos de IHC com foco na
+                            visibilidade do
+                            status do systema e consistência estrutural. A distribuição cromática por funcionalidade
+                            reproduz a coloração padrão de saídas Bash, garantindo alto contraste controlado e
+                            prevenindo a fadiga visual na leitura prolongada de dados.</p>
+                    </div>
+
+                    <hr class="dashed">
+
+                    <div class="bash-prompt">
+                        <span class="prompt-user">ryanf@fatec-itu</span>:<span class="prompt-path">/proc</span>$ <span
+                            class="terminal-cursor"></span>
+                    </div>
+                </main>
+
+                <aside class="tui-sidebar">
+                    <div class="sidebar-section">
+                        <div class="sidebar-title">> OPERATORS</div>
+                        <div class="sidebar-item">UID 1001: ryanf</div>
+                        <div class="sidebar-item">UID 1002: muriloa</div>
+                    </div>
+                    <div class="sidebar-section">
+                        <div class="sidebar-title">> ACADÉMICO</div>
+                        <div class="sidebar-item">INST : FATEC ITU</div>
+                        <div class="sidebar-item">CURSO : ADS</div>
+                        <div class="sidebar-item">MATÉRIA: IHC</div>
+                        <div class="sidebar-item">ANO : 2026</div>
+                    </div>
+                </aside>
+
+            </div>
+
+            <div class="tui-statusbar">
+                <div class="statusbar-left">
+                    <span>Módulo: SOBRE</span>
+                    <span>[DOCS]</span>
+                    <span>SEC: CORE</span>
+                </div>
+                <div class="statusbar-right">
+                    <span>HELP: F3</span>
+                    <span>SYS_OK</span>
+                </div>
+            </div>
+
+            <footer>
+                <p>Projeto IHC - Fatec Itu. Ryan & Murilo. 2026.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+</body>
+
+</html>
