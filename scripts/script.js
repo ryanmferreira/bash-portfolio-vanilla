@@ -1,3 +1,7 @@
+const HOME = "../pages/home.html"
+const GALLERY = "../pages/gallery.html"
+const ABOUT = "../pages/about.html"
+
 const dropdowns = document.getElementsByClassName("menu-dropdown");
 
 for (const dropdown of dropdowns) {
@@ -13,6 +17,23 @@ for (const dropdown of dropdowns) {
         });
     }
 }
+
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === '1') {
+        window.location.assign(HOME);
+    }
+    if (e.key === '2') {
+        window.location.assign(GALLERY);
+    }
+    if (e.key === '3') {
+        window.location.assign(ABOUT);
+    }
+});
 
 function updatePreview(selectedRow, imgSrc, title, desc, date) {
     const mainImg = document.getElementById("main-view-img");

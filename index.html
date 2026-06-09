@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecionando...</title>
-    <meta http-equiv="refresh" content="0; url='pages/home.html'">
+    <title>booting system...</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/boot-styles.css">
+
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 
-<body>
-    <p>Se você não for redirecionado automaticamente, <a href="pages/home.html">clique aqui</a>.</p>
+<body class="boot-body">
+
+    <div class="boot-container">
+        <div class="boot-log" id="bootLog">
+            <div>[ <span class="boot-ok">OK</span> ] Reached target System Initialization.</div>
+        </div>
+
+        <div class="boot-loading-bar">
+            <div class="boot-progress" id="bootProgress"></div>
+        </div>
+
+        <div class="boot-redirect-msg">
+            Iniciando interface gráfica... Se falhar, <a href="pages/home.html">clique aqui</a>.
+        </div>
+    </div>
+
+    <script src="scripts/boot-scripts.js"></script>
 </body>
 
 </html>

@@ -61,7 +61,7 @@ main {
 }
 
 .terminal-container {
-    max-width: 1200px;
+    max-width: 75%;
     margin: 0 auto;
     border: 2px solid var(--color-green);
     background-color: var(--bg-terminal);
@@ -144,6 +144,12 @@ main {
 @media (min-width: 900px) {
     .terminal-layout-grid {
         grid-template-columns: 3fr 1fr;
+    }
+}
+
+@media(max-width: 720px) {
+    .terminal-container {
+        max-width: 95% !important;
     }
 }
 
