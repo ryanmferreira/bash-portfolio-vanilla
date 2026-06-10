@@ -17,18 +17,6 @@ main {
     gap: 18px;
 }
 
-@media (min-width: 900px) {
-    .terminal-layout-grid {
-        grid-template-columns: 3fr 1fr;
-    }
-}
-
-@media(max-width: 720px) {
-    .terminal-container {
-        max-width: 95% !important;
-    }
-}
-
 /* --- BASH INTERACTION & CURSOR --- */
 .bash-prompt {
     font-size: 0.95rem;
@@ -351,4 +339,54 @@ footer {
     cursor: pointer;
     font-weight: bold;
     padding: 0;
+}
+
+@media (min-width: 900px) {
+    .terminal-layout-grid {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .terminal-container {
+        max-width: 100% !important;
+    }
+
+    .tui-box-title {
+        width: auto !important;
+        margin: 0 auto !important;
+        left: 8px !important;
+        right: 8px !important;
+        text-align: center !important;
+    }
+
+    .tui-box {
+        padding-top: 32px !important;
+    }
+
+    body {
+        padding: 12px;
+    }
+
+    .terminal-body,
+    main,
+    .tui-box {
+        padding: 12px;
+    }
+
+    .terminal-window-buttons {
+        display: none;
+    }
+
+    .tui-btn {
+        text-align: center;
+        font-size: 0.75rem;
+        padding: 4px;
+        width: 100%;
+    }
+
+    .terminal-title {
+        margin: 0 auto;
+        font-size: 0.75rem;
+    }
 }
