@@ -157,6 +157,8 @@ document.addEventListener('contextmenu', function (e) {
 });
 
 document.addEventListener("keydown", (e) => {
+    const isInGallery = window.location.pathname.includes(GALLERY) || GALLERY.includes(window.location.pathname);
+
     if (e.key === '1') {
         window.location.assign(HOME);
     }
@@ -169,7 +171,7 @@ document.addEventListener("keydown", (e) => {
         window.location.assign(ABOUT);
     }
 
-    if (GALLERY.includes(window.location.pathname)) {
+    if (isInGallery) {
         if (e.key === 'ArrowLeft') {
             previous();
         }
