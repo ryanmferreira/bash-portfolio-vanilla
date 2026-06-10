@@ -78,8 +78,8 @@
                     <div class="sidebar-section">
                         <div class="sidebar-title">> STORAGE MONITOR</div>
                         <div class="sidebar-row">
-                            <div class="sidebar-item">TOTAL: 6 arquivos</div>
-                            <div class="sidebar-item">FORMATS: .JPG (EXIF v2)</div>
+                            <div class="sidebar-item">TOTAL: 56 arquivos</div>
+                            <div class="sidebar-item">FORMATS: .JPG</div>
                             <div class="sidebar-item">MOUNT: /mnt/storage</div>
                             <div class="sidebar-item">SECTOR: 0x800FF32A</div>
                         </div>
@@ -96,71 +96,23 @@
                 <main>
                     <div class="bash-prompt">
                         <span class="prompt-user">ryanf@fatec-itu</span>:<span
-                            class="prompt-path">/mount/storage</span>$ tui-imgview --split-view ./imgs/
+                            class="prompt-path">/mount/storage</span>$ tui-imgview ./imgs/*
                     </div>
 
                     <div class="tui-split-wrapper">
                         <section class="tui-box split-left">
-                            <span class="tui-box-title">-- File Index: 6 items found --</span>
+                            <span class="tui-box-title">-- File Index: 56 items found --</span>
                             <div class="tui-table-container">
                                 <table class="tui-file-table">
                                     <thead>
                                         <tr>
                                             <th>PERMISSÕES</th>
-                                            <th>TAMANHO</th>
                                             <th>NOME DO ARQUIVO</th>
                                             <th>ESTADO DO SISTEMA</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="file-row active" tabindex="0"
-                                            onclick="updatePreview(this, '../imgs/f0006272.jpg', 'MEDIA_001.JPG', 'Mato (Matus)', '12/05/2026 - FATEC Itu')"
-                                            onkeydown="if(event.key==='Enter') this.click()">
-                                            <td>-rw-r--r--</td>
-                                            <td>2.4M</td>
-                                            <td class="file-name blue">MEDIA_001.JPG*</td>
-                                            <td><button class="tui-inline-btn">[ VISUALIZANDO ]</button></td>
-                                        </tr>
-                                        <tr class="file-row" tabindex="0"
-                                            onclick="updatePreview(this, '../imgs/f0012416.jpg', 'MEDIA_002.JPG', 'Mato (Matus)', '14/05/2026 - FATEC Itu')"
-                                            onkeydown="if(event.key==='Enter') this.click()">
-                                            <td>-rw-r--r--</td>
-                                            <td>1.9M</td>
-                                            <td class="file-name blue">MEDIA_002.JPG*</td>
-                                            <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
-                                        </tr>
-                                        <tr class="file-row" tabindex="0"
-                                            onclick="updatePreview(this, '../imgs/f0087040.jpg', 'MEDIA_003.JPG', 'Mato (Matus)', '15/05/2026 - FATEC Itu')"
-                                            onkeydown="if(event.key==='Enter') this.click()">
-                                            <td>-rw-r--r--</td>
-                                            <td>3.1M</td>
-                                            <td class="file-name blue">MEDIA_003.JPG*</td>
-                                            <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
-                                        </tr>
-                                        <tr class="file-row" tabindex="0"
-                                            onclick="updatePreview(this, '../imgs/f0051008.jpg', 'MEDIA_004.JPG', 'Mato (Matus)', '19/05/2026 - FATEC Itu')"
-                                            onkeydown="if(event.key==='Enter') this.click()">
-                                            <td>-rw-r--r--</td>
-                                            <td>2.7M</td>
-                                            <td class="file-name blue">MEDIA_004.JPG*</td>
-                                            <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
-                                        </tr>
-                                        <tr class="file-row" tabindex="0"
-                                            onclick="updatePreview(this, '../imgs/f0075136.jpg', 'MEDIA_005.JPG', 'Mato (Matus)', '19/05/2026 - FATEC Itu')"
-                                            onkeydown="if(event.key==='Enter') this.click()">
-                                            <td>-rw-r--r--</td>
-                                            <td>2.7M</td>
-                                            <td class="file-name blue">MEDIA_005.JPG*</td>
-                                            <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
-                                        </tr>
-                                        <tr class="file-row" tabindex="0"
-                                            onclick="updatePreview(this, '../imgs/f007536.jpg', 'MEDIA_006.JPG', 'Mato (Matus)', '19/05/2026 - FATEC Itu')"
-                                            onkeydown="if(event.key==='Enter') this.click()">
-                                            <td>-rw-r--r--</td>
-                                            <td>2.7M</td>
-                                            <td class="file-name blue">MEDIA_006.JPG*</td>
-                                            <td><button class="tui-inline-btn">[ SELECIONAR ]</button></td>
-                                        </tr>
+                                   
                                     </tbody>
                                 </table>
                             </div>
@@ -173,12 +125,14 @@
                                     <img id="main-view-img" src="../imgs/f0006272.jpg" alt="[ Visualização ]">
                                 </div>
                                 <div class="preview-data">
-                                    <div class="ascii-table-header">METADADOS EXIF (SAMSUNG ES25)</div>
+                                    <div class="ascii-table-header">METADADOS EXIF</div>
+                                    <div>[TITULO] : <span id="view-meta-title">Título do Arquivo</span></div>
                                     <div>[ARQUIVO] : <span id="meta-file">f0006272.jpg</span></div>
-                                    <div>[CATEGORIA] : <span id="meta-desc">Mato (Matus)</span></div>
+                                    <div>[DESCRICAO] : <span id="meta-desc">Mato (Matus)</span></div>
                                     <div>[DATA/LOC] : <span id="meta-date">12/05/2026 - FATEC Itu</span></div>
-                                    <div>[OP_CAMER] : <span>Ryan Ferreira</span></div>
-                                    <div>[STATUS] : <span id="meta-status" class="orange">INDEXED_OK</span></div>
+                                    <div>[CAMERA] : <span id="meta-camera">Samsung ES25</span></div>
+                                    <div>[FOTOGRAFO] : <span>Ryan / Murilo</span></div>
+                                    <div>[STATUS] : <span id="meta-status" class="orange">INDEXED_STATUS</span></div>
                                 </div>
                             </div>
                         </section>
@@ -211,6 +165,7 @@
         </div>
     </div>
 
+    <script src="../scripts/gallery-data.js"></script>
     <script src="../scripts/script.js"></script>
 </body>
 

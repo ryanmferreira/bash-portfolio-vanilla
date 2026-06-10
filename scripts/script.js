@@ -48,57 +48,111 @@ function toggleShorcutsView() {
     }
 }
 
-function updatePreview(selectedRow, imgSrc, title, desc, date) {
-    const mainImg = document.getElementById("main-view-img");
-    const viewTitle = document.getElementById("view-title");
-    const metaFile = document.getElementById("meta-file");
-    const metaDesc = document.getElementById("meta-desc");
-    const metaDate = document.getElementById("meta-date");
+function updatePreview(selectedRow, imgSrc, title, desc, date, camera = "Desconhecida") {
+    const mainImg = document.getElementById("main-view-img").src = imgSrc;
+    const viewTitle = document.getElementById("view-title").innerText = title.toUpperCase();
+    const viewMetaTitle = document.getElementById("view-meta-title").innerText = title;
+    const metaFile = document.getElementById("meta-file").innerText = imgSrc.substring(imgSrc.lastIndexOf('/') + 1);
+    const metaDesc = document.getElementById("meta-desc").innerText = desc;
+    const metaDate = document.getElementById("meta-date").innerText = date;
+    const metaCamera = document.getElementById("meta-camera").innerText = camera;
     const metaStatus = document.getElementById("meta-status");
 
-    if (mainImg) mainImg.src = imgSrc;
-    if (viewTitle) viewTitle.innerText = title;
-    if (metaFile) metaFile.innerText = imgSrc;
-    if (metaDesc) metaDesc.innerText = desc;
-    if (metaDate) metaDate.innerText = date;
+    metaStatus.classList.remove("orange", "red");
+    const img = new Image();
 
-    if (metaStatus) {
-        metaStatus.classList.remove("orange", "red");
+    img.onload = () => {
+        metaStatus.innerText = "INDEXED_OK";
+        metaStatus.classList.add("orange");
+    };
 
-        const img = new Image();
+    img.onerror = () => {
+        metaStatus.innerText = "INDEXED_ERROR";
+        metaStatus.classList.add("red");
+    };
 
-        img.onload = () => {
-            metaStatus.innerText = "INDEXED_OK";
-            metaStatus.classList.add("orange");
-        };
-
-        img.onerror = () => {
-            metaStatus.innerText = "INDEXED_ERROR";
-            metaStatus.classList.add("red");
-        };
-
-        img.src = imgSrc;
-    }
+    img.src = imgSrc;
 
     const rows = document.getElementsByClassName("file-row");
-
     for (const row of rows) {
         row.classList.remove("active");
-
         const btn = row.querySelector(".tui-inline-btn");
-
-        if (btn) {
-            btn.innerText = "[ SELECIONAR ]";
-        }
+        if (btn) btn.innerText = "[ SELECIONAR ]";
     }
 
     if (selectedRow) {
         selectedRow.classList.add("active");
-
         const activeBtn = selectedRow.querySelector(".tui-inline-btn");
-
-        if (activeBtn) {
-            activeBtn.innerText = "[ VISUALIZANDO ]";
-        }
+        if (activeBtn) activeBtn.innerText = "[ VISUALIZANDO ]";
     }
 }
+
+function loadGallery() {
+    const tableBody = document.querySelector(".tui-file-table tbody");
+    if (!tableBody) return;
+
+    tableBody.innerHTML = "";
+
+    const foldersByDevice = {
+        "A03": "a03",
+        "MotoG9": "moto-g9",
+        "Samsung_ES25": "recup-photorec"
+    };
+
+    let fileList = [];
+
+    for (const device in foldersByDevice) {
+        const currentDevicePhotos = galleryData[device];
+
+        if (currentDevicePhotos) {
+            for (const img of currentDevicePhotos) {
+                img.path = `../imgs/${foldersByDevice[device]}/${img.filename}`;
+                fileList.push(img);
+            }
+        }
+    }
+
+    for (let index = 0; index < fileList.length; index++) {
+        const img = fileList[index];
+
+        const tr = document.createElement("tr");
+
+        tr.className = index === 0 ? "file-row active" : "file-row";
+        tr.tabIndex = 0;
+
+        const permissions = "-rw-r--r--";
+        const visualisingBtn = index === 0 ? "[ VISUALIZANDO ]" : "[ SELECIONAR ]";
+
+        tr.innerHTML = `
+            <td>${permissions}</td>
+            <td class="file-name blue">${img.filename}*</td>
+            <td><button class="tui-inline-btn">${visualisingBtn}</button></td>
+        `;
+
+        tr.addEventListener("click", () => {
+            const descricao = img.description || img.desc;
+            updatePreview(tr, img.path, img.title, descricao, img.date, img.camera);
+        });
+
+        tr.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") tr.click();
+        });
+
+        tableBody.appendChild(tr);
+    }
+
+    if (fileList.length > 0) {
+        const firstImg = fileList[0];
+        const firstRow = tableBody.querySelector(".file-row");
+        const firstDesc = firstImg.description || firstImg.desc;
+
+        updatePreview(firstRow, firstImg.path, firstImg.title, firstDesc, firstImg.date, firstImg.camera);
+    }
+
+    const storageItem = document.querySelector(".sidebar-item");
+    if (storageItem) {
+        storageItem.innerText = `TOTAL: ${fileList.length} arquivos`;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadGallery);
