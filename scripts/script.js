@@ -150,9 +150,14 @@ function loadGallery() {
     }
 
     const storageItem = document.querySelector(".sidebar-item");
-    if (storageItem) {
-        storageItem.innerText = `TOTAL: ${fileList.length} arquivos`;
-    }
+    const countFiles = document.getElementById("file-count");
+    const totalFiles = document.getElementById("total-files");
+    const filesFound = document.getElementById("files-found");
+
+    storageItem.innerText = `TOTAL: ${fileList.length} arquivos`;
+    countFiles.innerText = `FILES: ${fileList.length}/${fileList.length}`;
+    totalFiles.innerText = `TOTAL: ${fileList.length} arquivos`;
+    filesFound.innerText = `-- File Index: ${fileList.length} items found --`;
 }
 
 document.addEventListener('DOMContentLoaded', loadGallery);
