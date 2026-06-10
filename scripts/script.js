@@ -2,6 +2,30 @@ const HOME = "../pages/home.html"
 const GALLERY = "../pages/gallery.html"
 const ABOUT = "../pages/about.html"
 
+function toggleShorcutsView() {
+    const modal = document.querySelector(".shortcuts-modal");
+
+    const isVisible = window.getComputedStyle(modal).display === "block";
+
+    if (isVisible) {
+        modal.style.display = "none";
+    } else {
+        modal.style.display = "block";
+    }
+}
+
+function updateFileCount(fileList) {
+    const storageItem = document.querySelector(".sidebar-item");
+    const countFiles = document.getElementById("file-count");
+    const totalFiles = document.getElementById("total-files");
+    const filesFound = document.getElementById("files-found");
+
+    storageItem.innerText = `TOTAL: ${fileList.length} arquivos`;
+    countFiles.innerText = `FILES: ${fileList.length}/${fileList.length}`;
+    totalFiles.innerText = `TOTAL: ${fileList.length} arquivos`;
+    filesFound.innerText = `-- File Index: ${fileList.length} items found --`;
+}
+
 const dropdowns = document.getElementsByClassName("menu-dropdown");
 
 for (const dropdown of dropdowns) {
@@ -18,46 +42,19 @@ for (const dropdown of dropdowns) {
     }
 }
 
-document.addEventListener('contextmenu', function (event) {
-    event.preventDefault();
-});
-
-document.addEventListener("keydown", (e) => {
-    if (e.key === '1') {
-        window.location.assign(HOME);
-    }
-
-    if (e.key === '2') {
-        window.location.assign(GALLERY);
-    }
-
-    if (e.key === '3') {
-        window.location.assign(ABOUT);
-    }
-});
-
-function toggleShorcutsView() {
-    const modal = document.querySelector(".shortcuts-modal");
-
-    const isVisible = window.getComputedStyle(modal).display === "block";
-
-    if (isVisible) {
-        modal.style.display = "none";
-    } else {
-        modal.style.display = "block";
-    }
-}
-
 function updatePreview(selectedRow, imgSrc, title, desc, date, camera = "Desconhecida", photog = "Desconhecido") {
-    const mainImg = document.getElementById("main-view-img").src = imgSrc;
+    const mainImg = document.getElementById("main-view-img");
     const viewTitle = document.getElementById("view-title").innerText = title.toUpperCase();
-    const viewMetaTitle = document.getElementById("view-meta-title").innerText = title;
+    const viewMetaTitle = document.getElementById("view-meta-title").innerText = title.toUpperCase();
     const metaFile = document.getElementById("meta-file").innerText = imgSrc;
-    const metaDesc = document.getElementById("meta-desc").innerText = desc;
-    const metaDate = document.getElementById("meta-date").innerText = date;
-    const metaCamera = document.getElementById("meta-camera").innerText = camera;
-    const metaPhotog = document.getElementById("meta-photog").innerText = photog;
+    const metaDesc = document.getElementById("meta-desc").innerText = desc.toUpperCase();
+    const metaDate = document.getElementById("meta-date").innerText = date.toUpperCase();
+    const metaCamera = document.getElementById("meta-camera").innerText = camera.toUpperCase();
+    const metaPhotog = document.getElementById("meta-photog").innerText = photog.toUpperCase();
     const metaStatus = document.getElementById("meta-status");
+
+    mainImg.alt = "Nome da imagem: " + title;
+    mainImg.src = imgSrc;
 
     metaStatus.classList.remove("orange", "red");
     const img = new Image();
@@ -134,11 +131,7 @@ function loadGallery() {
             updatePreview(tr, img.path, img.title, img.description, img.date, img.camera, img.photographer);
         });
 
-        tr.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") {
-                tr.click();
-            }
-        });
+        console.log(index);
 
         tableBody.appendChild(tr);
     }
@@ -151,15 +144,28 @@ function loadGallery() {
         updatePreview(firstRow, firstImg.path, firstImg.title, firstDesc, firstImg.date, firstImg.camera, firstImg.photographer);
     }
 
-    const storageItem = document.querySelector(".sidebar-item");
-    const countFiles = document.getElementById("file-count");
-    const totalFiles = document.getElementById("total-files");
-    const filesFound = document.getElementById("files-found");
-
-    storageItem.innerText = `TOTAL: ${fileList.length} arquivos`;
-    countFiles.innerText = `FILES: ${fileList.length}/${fileList.length}`;
-    totalFiles.innerText = `TOTAL: ${fileList.length} arquivos`;
-    filesFound.innerText = `-- File Index: ${fileList.length} items found --`;
+    updateFileCount(fileList)
 }
 
-document.addEventListener('DOMContentLoaded', loadGallery);
+document.addEventListener("DOMContentLoaded", () => {
+    loadGallery();
+});
+
+
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === '1') {
+        window.location.assign(HOME);
+    }
+
+    if (e.key === '2') {
+        window.location.assign(GALLERY);
+    }
+
+    if (e.key === '3') {
+        window.location.assign(ABOUT);
+    }
+});
