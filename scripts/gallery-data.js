@@ -325,7 +325,7 @@ const galleryData = {
         {
             "id": 15,
             "title": "Jaula do Mundo",
-            "description": "Capim",
+            "description": "Capim (em homenagem a um grande Homem)",
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",

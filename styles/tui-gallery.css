@@ -157,3 +157,13 @@ thead {
     font-size: 0.82rem;
     padding-bottom: 8px;
 }
+
+.change-photo-buttons {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+}
+
+.change-photo-buttons button {
+    width: 50% !important;
+}

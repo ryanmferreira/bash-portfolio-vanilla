@@ -2,6 +2,9 @@ const HOME = "../pages/home.html"
 const GALLERY = "../pages/gallery.html"
 const ABOUT = "../pages/about.html"
 
+let actualImageIndex = 0;
+let totalImages = 0;
+
 function toggleShorcutsView() {
     const modal = document.querySelector(".shortcuts-modal");
 
@@ -14,16 +17,11 @@ function toggleShorcutsView() {
     }
 }
 
-function updateFileCount(fileList) {
-    const storageItem = document.querySelector(".sidebar-item");
-    const countFiles = document.getElementById("file-count");
-    const totalFiles = document.getElementById("total-files");
-    const filesFound = document.getElementById("files-found");
-
-    storageItem.innerText = `TOTAL: ${fileList.length} arquivos`;
-    countFiles.innerText = `FILES: ${fileList.length}/${fileList.length}`;
-    totalFiles.innerText = `TOTAL: ${fileList.length} arquivos`;
-    filesFound.innerText = `-- File Index: ${fileList.length} items found --`;
+function updateFileCount() {
+    const storageItem = document.querySelector(".sidebar-item").innerText = `TOTAL: ${totalImages} arquivos`;;
+    const countFiles = document.getElementById("file-count").innerText = `FILES: ${totalImages}/${totalImages}`;
+    const totalFiles = document.getElementById("total-files").innerText = `TOTAL: ${totalImages} arquivos`;;
+    const filesFound = document.getElementById("files-found").innerText = `-- File Index: ${totalImages} items found --`;
 }
 
 const dropdowns = document.getElementsByClassName("menu-dropdown");
@@ -129,9 +127,10 @@ function loadGallery() {
 
         tr.addEventListener("click", () => {
             updatePreview(tr, img.path, img.title, img.description, img.date, img.camera, img.photographer);
+            actualImageIndex = index;
         });
 
-        console.log(index);
+        tr.id = "tr-" + index;
 
         tableBody.appendChild(tr);
     }
@@ -144,7 +143,8 @@ function loadGallery() {
         updatePreview(firstRow, firstImg.path, firstImg.title, firstDesc, firstImg.date, firstImg.camera, firstImg.photographer);
     }
 
-    updateFileCount(fileList)
+    totalImages = (fileList.length - 1);
+    updateFileCount()
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -152,8 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener('contextmenu', function (event) {
-    event.preventDefault();
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
 });
 
 document.addEventListener("keydown", (e) => {
@@ -168,4 +168,58 @@ document.addEventListener("keydown", (e) => {
     if (e.key === '3') {
         window.location.assign(ABOUT);
     }
+
+    if (GALLERY.includes(window.location.pathname)) {
+        if (e.key === 'ArrowLeft') {
+            previous();
+        }
+
+        if (e.key === 'ArrowRight') {
+            next();
+        }
+    }
 });
+
+function next() {
+    if (actualImageIndex < totalImages) {
+        actualImageIndex++;
+    }
+    else {
+        actualImageIndex = 0;
+    }
+
+    selectImage();
+    debug();
+}
+
+function previous() {
+    if (actualImageIndex > 0) {
+        actualImageIndex--;
+    }
+    else {
+        actualImageIndex = totalImages;
+    }
+
+    selectImage();
+    debug();
+}
+
+function selectImage() {
+    var imgID = "tr-" + actualImageIndex;
+
+    var element = document.getElementById(imgID);
+
+    if (element) {
+        element.click();
+
+        element.scrollIntoView({
+            behavior: 'auto',
+            block: 'nearest',
+            inline: 'end'
+        });
+    }
+}
+
+function debug() {
+    console.log(actualImageIndex);
+}
