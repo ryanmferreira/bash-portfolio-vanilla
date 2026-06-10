@@ -48,14 +48,15 @@ function toggleShorcutsView() {
     }
 }
 
-function updatePreview(selectedRow, imgSrc, title, desc, date, camera = "Desconhecida") {
+function updatePreview(selectedRow, imgSrc, title, desc, date, camera = "Desconhecida", photog = "Desconhecido") {
     const mainImg = document.getElementById("main-view-img").src = imgSrc;
     const viewTitle = document.getElementById("view-title").innerText = title.toUpperCase();
     const viewMetaTitle = document.getElementById("view-meta-title").innerText = title;
-    const metaFile = document.getElementById("meta-file").innerText = imgSrc.substring(imgSrc.lastIndexOf('/') + 1);
+    const metaFile = document.getElementById("meta-file").innerText = imgSrc;
     const metaDesc = document.getElementById("meta-desc").innerText = desc;
     const metaDate = document.getElementById("meta-date").innerText = date;
     const metaCamera = document.getElementById("meta-camera").innerText = camera;
+    const metaPhotog = document.getElementById("meta-photog").innerText = photog;
     const metaStatus = document.getElementById("meta-status");
 
     metaStatus.classList.remove("orange", "red");
@@ -130,12 +131,13 @@ function loadGallery() {
         `;
 
         tr.addEventListener("click", () => {
-            const descricao = img.description || img.desc;
-            updatePreview(tr, img.path, img.title, descricao, img.date, img.camera);
+            updatePreview(tr, img.path, img.title, img.description, img.date, img.camera, img.photographer);
         });
 
         tr.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") tr.click();
+            if (event.key === "Enter") {
+                tr.click();
+            }
         });
 
         tableBody.appendChild(tr);
@@ -144,9 +146,9 @@ function loadGallery() {
     if (fileList.length > 0) {
         const firstImg = fileList[0];
         const firstRow = tableBody.querySelector(".file-row");
-        const firstDesc = firstImg.description || firstImg.desc;
+        const firstDesc = firstImg.description;
 
-        updatePreview(firstRow, firstImg.path, firstImg.title, firstDesc, firstImg.date, firstImg.camera);
+        updatePreview(firstRow, firstImg.path, firstImg.title, firstDesc, firstImg.date, firstImg.camera, firstImg.photographer);
     }
 
     const storageItem = document.querySelector(".sidebar-item");
