@@ -13,7 +13,7 @@ const logs = [
     "[ <span class='boot-warn'>WARN</span> ] The website creator doesn't know what he's doing.",
     "[  <span class='boot-ok'>OK</span>  ] Connecting to default network gateway via DHCP server...",
     "[  <span class='boot-ok'>OK</span>  ] Starting local security and firewall daemon services...",
-    "[ <span class='boot-error'>FAIL</span> ] The website creator simulated a software error to test the system's behavior.",
+    "[ <span class='boot-error'>FAIL</span> ] The website creator is too lazy to formulate error messages.",
     "[  <span class='boot-ok'>OK</span>  ] Allocating kernel memory blocks for user environment...",
     "[ <span class='boot-error'>FAIL</span> ] Coffee provider service down: 0 cups detected.",
     "[  <span class='boot-warn'>WARN</span>  ] Bypassing simulation crash... Kernel state restored to nominal.",
@@ -37,12 +37,15 @@ const bootInterval = setInterval(() => {
     if (currentLog < logs.length) {
         const line = document.createElement('div');
         line.innerHTML = logs[currentLog];
+
         logContainer.appendChild(line);
         logContainer.scrollTop = logContainer.scrollHeight;
+
         currentLog++;
     } else {
         document.body.style.opacity = '0';
         document.body.style.transition = `opacity ${REDIRECT_FADE_OUT_MS}ms ease`;
+
         setTimeout(() => {
             window.location.href = "pages/home.html";
         }, REDIRECT_FADE_OUT_MS);

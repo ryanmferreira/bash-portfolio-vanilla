@@ -2,6 +2,11 @@ const HOME = "../pages/home.html"
 const GALLERY = "../pages/gallery.html"
 const ABOUT = "../pages/about.html"
 
+const windowWidth = window.innerWidth;
+
+var path = window.location.pathname;
+var fileName = path.split("/").pop();
+
 let actualImageIndex = 0;
 let totalImages = 0;
 
@@ -157,8 +162,6 @@ document.addEventListener('contextmenu', function (e) {
 });
 
 document.addEventListener("keydown", (e) => {
-    const isInGallery = window.location.pathname.includes(GALLERY) || GALLERY.includes(window.location.pathname);
-
     if (e.key === '1') {
         window.location.assign(HOME);
     }
@@ -171,7 +174,7 @@ document.addEventListener("keydown", (e) => {
         window.location.assign(ABOUT);
     }
 
-    if (isInGallery) {
+    if (fileName === "gallery.html") {
         if (e.key === 'ArrowLeft') {
             previous();
         }
@@ -214,14 +217,19 @@ function selectImage() {
     if (element) {
         element.click();
 
-        element.scrollIntoView({
-            behavior: 'auto',
-            block: 'nearest',
-            inline: 'end'
-        });
+        if (windowWidth > 720) {
+            element.scrollIntoView({
+                behavior: 'auto',
+                block: 'nearest',
+                inline: 'end'
+            });
+        }
     }
 }
 
 function debug() {
-    console.log(actualImageIndex);
+    console.log("Largura da tela: " + windowWidth)
+    console.log("Image index: " + actualImageIndex);
+    console.log("Page: " + fileName)
+    console.log();
 }
