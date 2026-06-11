@@ -158,10 +158,11 @@ function loadGallery(deviceFilter = 'all') {
 }
 
 function filterGallery(device) {
+    actualImageIndex = 0;
+
     loadGallery(device);
 
     const buttons = document.querySelectorAll(".filter-btn");
-
     buttons.forEach(btn => btn.classList.remove("active"));
 
     event.target.classList.add("active");
