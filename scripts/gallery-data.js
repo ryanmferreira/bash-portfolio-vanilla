@@ -444,7 +444,27 @@ const galleryData = {
             "filename": "aberrante-pudor.jpeg"
         }
     ],
-    "Samsung_ES25": [
+    "SamsungES25": [
+        {
+            "id": 12,
+            "title": "Olhos de Esmeralda Adjacentes",
+            "description": "Tulipa - Gato doméstico (Felis catus)",
+            "date": "14/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "olhos-esmeraldas-adjacentes.jpg"
+        },
+        {
+            "id": 17,
+            "title": "O Fantasma Entre as Folhas",
+            "description": "Murta-de-cheiro (Murraya paniculata), Borboleta-branca (Ascia monuste)",
+            "date": "14/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "o-fantasma-dentre-as-folhas.jpg"
+        },
         {
             "id": 1,
             "title": "Chifres do Dragão",
@@ -496,16 +516,6 @@ const galleryData = {
             "filename": "chama-da-vida.jpg"
         },
         {
-            "id": 6,
-            "title": "Mesmo Lugar, Diferentes Visões",
-            "description": "Campus da Fatec Itu e sua mata nativa",
-            "date": "14/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "mesmo-lugar-diferentes-visoes.jpg"
-        },
-        {
             "id": 7,
             "title": "Placas Tortas, Árvores Retilíneas",
             "description": "Campus da Fatec Itu e sua mata nativa",
@@ -525,16 +535,16 @@ const galleryData = {
             "photographer": "Ryan Ferreira",
             "filename": "o-badalar-da-manha.jpg"
         },
-        {
-            "id": 9,
-            "title": "Indiferente à Beleza",
-            "description": "Joá-de-capote (Nicandra physalodes)",
-            "date": "14/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "inderente-a-beleza.jpg"
-        },
+        // {
+        //     "id": 9,
+        //     "title": "Indiferente à Beleza",
+        //     "description": "Joá-de-capote (Nicandra physalodes)",
+        //     "date": "14/05/2026",
+        //     "location": "Fatec Itu",
+        //     "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
+        //     "photographer": "Ryan Ferreira",
+        //     "filename": "inderente-a-beleza.jpg"
+        // },
         {
             "id": 10,
             "title": "Chamativa Natureza",
@@ -556,16 +566,6 @@ const galleryData = {
             "filename": "visitante-inesperado.jpg"
         },
         {
-            "id": 12,
-            "title": "Olhos de Esmeralda Adjacentes",
-            "description": "Tulipa - Gato doméstico (Felis catus)",
-            "date": "14/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "olhos-esmeraldas-adjacentes.jpg"
-        },
-        {
             "id": 13,
             "title": "Um Dentre Tantos",
             "description": "Palmeira Rabo-de-Peixe (Caryota urens)",
@@ -575,16 +575,16 @@ const galleryData = {
             "photographer": "Ryan Ferreira",
             "filename": "ao-centro-da-imagem-um-dentre-tantos.jpg"
         },
-        {
-            "id": 14,
-            "title": "Pétalas de Porcelana",
-            "description": "Murta-de-cheiro (Murraya paniculata)",
-            "date": "14/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "petalas-de-porcelana.jpg"
-        },
+        // {
+        //     "id": 14,
+        //     "title": "Pétalas de Porcelana",
+        //     "description": "Murta-de-cheiro (Murraya paniculata)",
+        //     "date": "14/05/2026",
+        //     "location": "Fatec Itu",
+        //     "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
+        //     "photographer": "Ryan Ferreira",
+        //     "filename": "petalas-de-porcelana.jpg"
+        // },
         {
             "id": 15,
             "title": "Viajante Descansando",
@@ -604,16 +604,6 @@ const galleryData = {
             "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
             "photographer": "Ryan Ferreira",
             "filename": "a-delicadeza-encontra-a-fragilidade.jpg"
-        },
-        {
-            "id": 17,
-            "title": "O Fantasma Entre as Folhas",
-            "description": "Murta-de-cheiro (Murraya paniculata), Borboleta-branca (Ascia monuste)",
-            "date": "14/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "o-fantasma-dentre-as-folhas.jpg"
         },
         {
             "id": 18,
@@ -696,16 +686,6 @@ const galleryData = {
             "filename": "amor-veraneio.jpg"
         },
         {
-            "id": 26,
-            "title": "Na Saúde e na Doença",
-            "description": "Ixora-rei (Ixora macrothyrsa)",
-            "date": "14/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "e-na-doenca.jpg"
-        },
-        {
             "id": 27,
             "title": "No Amor",
             "description": "Ixora-rei (Ixora macrothyrsa)",
@@ -714,6 +694,16 @@ const galleryData = {
             "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
             "photographer": "Ryan Ferreira",
             "filename": "no-amor.jpg"
+        },
+        {
+            "id": 26,
+            "title": "Na Saúde e na Doença",
+            "description": "Ixora-rei (Ixora macrothyrsa)",
+            "date": "14/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "e-na-doenca.jpg"
         },
         {
             "id": 28,
@@ -734,6 +724,16 @@ const galleryData = {
             "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
             "photographer": "Ryan Ferreira",
             "filename": "dupla-dinamica.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Mesmo Lugar, Diferentes Visões",
+            "description": "Campus da Fatec Itu e sua mata nativa",
+            "date": "14/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "mesmo-lugar-diferentes-visoes.jpg"
         }
     ]
 };

@@ -7,8 +7,10 @@ const windowWidth = window.innerWidth;
 var path = window.location.pathname;
 var fileName = path.split("/").pop();
 
-let actualImageIndex = 0;
-let totalImages = 0;
+var currentFilter = 'all';
+
+var actualImageIndex = 0;
+var totalImages = 0;
 
 function toggleShorcutsView() {
     const modal = document.querySelector(".shortcuts-modal");
@@ -88,16 +90,17 @@ function updatePreview(selectedRow, imgSrc, title, desc, date, camera = "Desconh
     }
 }
 
-function loadGallery() {
+function loadGallery(deviceFilter = 'all') {
+    currentFilter = deviceFilter;
+
     const tableBody = document.querySelector(".tui-file-table tbody");
-    if (!tableBody) return;
 
     tableBody.innerHTML = "";
 
     const foldersByDevice = {
+        "SamsungES25": "recup-photorec",
         "A03": "a03",
         "MotoG9": "moto-g9",
-        "Samsung_ES25": "recup-photorec"
     };
 
     let fileList = [];
@@ -105,10 +108,12 @@ function loadGallery() {
     for (const device in foldersByDevice) {
         const currentDevicePhotos = galleryData[device];
 
-        if (currentDevicePhotos) {
-            for (const img of currentDevicePhotos) {
-                img.path = `../imgs/${foldersByDevice[device]}/${img.filename}`;
-                fileList.push(img);
+        if (deviceFilter === 'all' || deviceFilter === device) {
+            if (currentDevicePhotos) {
+                for (const img of currentDevicePhotos) {
+                    img.path = `../imgs/${foldersByDevice[device]}/${img.filename}`;
+                    fileList.push(img);
+                }
             }
         }
     }
@@ -150,6 +155,16 @@ function loadGallery() {
 
     totalImages = (fileList.length - 1);
     updateFileCount()
+}
+
+function filterGallery(device) {
+    loadGallery(device);
+
+    const buttons = document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    event.target.classList.add("active");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -228,8 +243,8 @@ function selectImage() {
 }
 
 function debug() {
-    console.log("Largura da tela: " + windowWidth)
-    console.log("Image index: " + actualImageIndex);
+    console.log("Windows Width: " + windowWidth)
     console.log("Page: " + fileName)
-    console.log();
+    console.log("Image index: " + actualImageIndex + "/" + totalImages);
+    console.log("Images total: " + totalImages);
 }
