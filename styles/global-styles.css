@@ -27,6 +27,26 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-mono) !important;
+
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-green) var(--bg-terminal);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-green);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted);
 }
 
 /* --- CHROMA COLOR UTILITIES --- */
@@ -81,28 +101,4 @@ p {
     border-top: 2px dashed var(--color-muted);
     margin: 24px 0 16px 0;
     width: 100%;
-}
-
-/* Chrome, Edge, Safari */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 0;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--color-green);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--color-muted);
-}
-
-/* Firefox */
-* {
-    scrollbar-width: auto;
-    scrollbar-color: var(--color-green) var(--bg-terminal);
 }
