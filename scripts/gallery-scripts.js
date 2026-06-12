@@ -7,6 +7,8 @@ var currentFilter = 'all';
 var actualImageIndex = 0;
 var totalImages = 0;
 
+var canClose = false;
+
 function zoomIn() {
     actuallZoom += scale;
     updateImageScale();
@@ -232,6 +234,7 @@ function toggleImageFullscreen() {
         fullscreenImage.style.display = "none";
     } else {
         fullscreenImage.style.display = "flex";
+        canClose = true;
     }
 
     resetZoom();

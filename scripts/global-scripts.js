@@ -10,14 +10,13 @@ var fileName = path.split("/").pop();
 const dropdowns = document.getElementsByClassName("menu-dropdown");
 
 function toggleShorcutsView() {
-  const modal = document.querySelector(".shortcuts-modal");
-
-  const isVisible = window.getComputedStyle(modal).display === "block";
+  const shortcutsModal = document.querySelector(".shortcuts-modal");
+  const isVisible = window.getComputedStyle(shortcutsModal).display === "block";
 
   if (isVisible) {
-    modal.style.display = "none";
+    shortcutsModal.style.display = "none";
   } else {
-    modal.style.display = "block";
+    shortcutsModal.style.display = "block";
   }
 }
 
@@ -59,6 +58,27 @@ document.addEventListener("keydown", (e) => {
 
     if (e.key === 'ArrowRight') {
       next();
+    }
+
+    if (e.key === 'Escape' && canClose) {
+      toggleImageFullscreen();
+      canClose = false;
+    }
+
+    if (e.key === '+') {
+      zoomIn();
+    }
+
+    if (e.key === '-') {
+      zoomOut();
+    }
+
+    if (e.key === '0') {
+      resetZoom();
+    }
+
+    if (e.key === 'f') {
+      toggleImageFullscreen();
     }
   }
 });

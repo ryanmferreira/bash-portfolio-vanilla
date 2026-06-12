@@ -72,6 +72,11 @@
                 <h2>Navegar entre fotos (aba galeria)</h2>
                 <p><- (seta para esquerda) para voltar</p>
                         <p>-> (seta para direita) para avançar</p>
+                        <p>F - Alternar modo tela cheia</p>
+                        <p>Esc - Sair da tela cheia</p>
+                        <p>+ - Aumentar zoom</p>
+                        <p>- - Diminuir zoom</p>
+                        <p>0 - Resetar zoom</p>
             </div>
         </div>
 
@@ -108,10 +113,10 @@
 
             <div class="gallery-controls">
                 <div class="controls-row">
-                    <button class="tui-btn" onclick="previous()">[ <- Voltar ]</button>
-                            <button class="tui-btn" id="close-btn" onclick="toggleImageFullscreen()">[ X Fechar
+                    <button class="tui-btn orange" onclick="previous()">[ <- Voltar ]</button>
+                            <button class="tui-btn red" id="close-btn" onclick="toggleImageFullscreen()">[ X Fechar
                                 ]</button>
-                            <button class="tui-btn" onclick="next()">[ Avançar -> ]</button>
+                            <button class="tui-btn orange" onclick="next()">[ Avançar -> ]</button>
                 </div>
             </div>
         </div>
@@ -190,8 +195,9 @@
                                 </div>
 
                                 <div class="change-photo-buttons">
-                                    <button id="previous" class="tui-btn" onclick="previous()">[ <- Anterior ]</button>
-                                            <button id="next" class="tui-btn" onclick="next()">[ Próximo ->
+                                    <button id="previous" class="tui-btn orange" onclick="previous()">[ <- Anterior
+                                            ]</button>
+                                            <button id="next" class="tui-btn orange" onclick="next()">[ Próximo ->
                                                 ]</button>
                                 </div>
 
