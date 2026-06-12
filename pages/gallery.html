@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <div class="terminal-container">
         <div class="terminal-header">
             <span class="terminal-title">[-] Main Window [bash - ryanf@fatec-itu: /etc]</span>
@@ -73,6 +72,25 @@
                 <h2>Navegar entre fotos (aba galeria)</h2>
                 <p><- (seta para esquerda) para voltar</p>
                         <p>-> (seta para direita) para avançar</p>
+            </div>
+        </div>
+
+        <div class="gallery-div">
+            <div class="gallery-center">
+                <img class="fullscreen" id="fullscreen-image" src="../imgs/recup-photorec/chama-da-vida.jpg"
+                    alt="[ Visualização ]">
+            </div>
+
+            <div class="gallery-controls">
+                <div class="controls-row">
+                    <button class="tui-btn" onclick="ZoomOut()">[ - Zoom Out ]</button>
+                    <button class="tui-btn" onclick="ZoomIn()">[ + Zoom In ]</button>
+                </div>
+                <div class="controls-row">
+                    <button class="tui-btn" onclick="previous()">[ Voltar ]</button>
+                    <button class="tui-btn" id="close-btn" onclick="toggleFullscreenView()">[ Fechar ]</button>
+                    <button class="tui-btn" onclick="next()">[ Avançar ]</button>
+                </div>
             </div>
         </div>
 

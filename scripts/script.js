@@ -12,6 +12,20 @@ var currentFilter = 'all';
 var actualImageIndex = 0;
 var totalImages = 0;
 
+function toggleFullscreenView() {
+    const fullscreenImage = document.querySelector(".gallery-div");
+
+    const isVisible = window.getComputedStyle(fullscreenImage).display === "flex";
+
+    if (isVisible) {
+        fullscreenImage.style.display = "none";
+    } else {
+        fullscreenImage.style.display = "flex";
+    }
+
+    resetZoom();
+}
+
 function toggleShorcutsView() {
     const modal = document.querySelector(".shortcuts-modal");
 
@@ -47,8 +61,38 @@ for (const dropdown of dropdowns) {
     }
 }
 
+const fullscreenImg = document.getElementById("fullscreen-image");
+let scale = 0.25;
+let actuallZoom = 1;
+
+function ZoomIn() {
+    actuallZoom += scale;
+    updateZoom();
+}
+
+function ZoomOut() {
+    if (actuallZoom > 0.25) {
+        actuallZoom -= scale;
+        updateZoom();
+    }
+}
+
+function resetZoom() {
+    actuallZoom = 1;
+    updateZoom();
+}
+
+function updateZoom() {
+    fullscreenImg.style.transform = `scale(${actuallZoom})`;
+}
+
+document.getElementById("main-view-img").addEventListener("click", () => {
+    toggleFullscreenView();
+});
+
 function updatePreview(selectedRow, imgSrc, title, desc, date, camera = "Desconhecida", photog = "Desconhecido") {
     const mainImg = document.getElementById("main-view-img");
+    const fullscreenImg = document.getElementById("fullscreen-image");
     const viewTitle = document.getElementById("view-title").innerText = title.toUpperCase();
     const viewMetaTitle = document.getElementById("view-meta-title").innerText = title.toUpperCase();
     const metaFile = document.getElementById("meta-file").innerText = imgSrc;
@@ -59,7 +103,10 @@ function updatePreview(selectedRow, imgSrc, title, desc, date, camera = "Desconh
     const metaStatus = document.getElementById("meta-status");
 
     mainImg.alt = "Nome da imagem: " + title;
+    fullscreenImg.alt = "Nome da imagem: " + title;
+
     mainImg.src = imgSrc;
+    fullscreenImg.src = imgSrc;
 
     metaStatus.classList.remove("orange", "red");
     const img = new Image();
