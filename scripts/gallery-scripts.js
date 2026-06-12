@@ -161,6 +161,7 @@ function filterGallery(device) {
 
 document.addEventListener("DOMContentLoaded", () => {
     loadGallery();
+    updateFileCount(true)
 });
 
 function next() {
@@ -208,12 +209,18 @@ function selectImage() {
     }
 }
 
-function updateFileCount() {
-    const storageItem = document.querySelector(".sidebar-item").innerText = `TOTAL: ${totalImages + 1} arquivos`;;
-    const countFiles = document.getElementById("file-count").innerText = `FILES: ${totalImages + 1}/${totalImages + 1}`;
-    const totalFiles = document.getElementById("total-files").innerText = `TOTAL: ${totalImages + 1} arquivos`;;
-    const filesFound = document.getElementById("files-found").innerText = `-- File Index: ${totalImages + 1} items found --`;
-    const filePos = document.getElementById("pos").innerText = `${actualImageIndex + 1} / ${totalImages + 1}`;
+function updateFileCount(firstLoaded = false) {
+    if (firstLoaded) {
+        const storageItem = document.querySelector(".sidebar-item").innerText = `TOTAL: ${totalImages + 1} arquivos`;;
+        const countFiles = document.getElementById("file-count").innerText = `FILES: ${totalImages + 1}/${totalImages + 1}`;
+        const totalFiles = document.getElementById("total-files").innerText = `TOTAL: ${totalImages + 1} arquivos`;;
+        const filesFound = document.getElementById("files-found").innerText = `-- File Index: ${totalImages + 1} items found --`;
+        const filePos = document.querySelectorAll("#pos").forEach(el => el.innerText = `${actualImageIndex + 1} / ${totalImages + 1}`);
+    }
+    else {
+        const filesFound = document.getElementById("files-found").innerText = `-- File Index: ${totalImages + 1} items found --`;
+        const filePos = document.querySelectorAll("#pos").forEach(el => el.innerText = `${actualImageIndex + 1} / ${totalImages + 1}`);
+    }
 }
 
 function toggleImageFullscreen() {
