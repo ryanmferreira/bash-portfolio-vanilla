@@ -257,6 +257,7 @@ function next() {
     }
 
     selectImage();
+    resetZoom();
     debug();
 }
 
@@ -269,6 +270,7 @@ function previous() {
     }
 
     selectImage();
+    resetZoom();
     debug();
 }
 

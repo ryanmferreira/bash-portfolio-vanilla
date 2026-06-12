@@ -1,24 +1,14 @@
 const galleryData = {
     "A03": [
         {
-            "id": 1,
-            "title": "Entardecer Tóxico",
-            "description": "Tulipa-africana (Spathodea campanulata)",
+            "id": 14,
+            "title": '"Melhor Lado"',
+            "description": "Gato doméstico (Felis catus)",
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
             "photographer": "Ryan Ferreira",
-            "filename": "entardecer-toxico.jpg"
-        },
-        {
-            "id": 2,
-            "title": "Visão dos Portões",
-            "description": "Árvores de sombra, Grama (Paspalum notatum) e plantas menores",
-            "date": "12/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "visao-dos-portoes.jpg"
+            "filename": "melhor-lado.jpg"
         },
         {
             "id": 3,
@@ -31,6 +21,16 @@ const galleryData = {
             "filename": "gigante-guerreiro-fungico.jpg"
         },
         {
+            "id": 8,
+            "title": "Sol Poente",
+            "description": "Campus da Fatec Itu e sua mata nativa",
+            "date": "12/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "sol-poente.jpg"
+        },
+        {
             "id": 4,
             "title": "Escurecer Campino",
             "description": "Mata nativa",
@@ -41,14 +41,14 @@ const galleryData = {
             "filename": "escurecer-campino.jpg"
         },
         {
-            "id": 5,
-            "title": "Natureza sob Fios",
-            "description": "Pata-de-vaca (Bauhinia forficata)",
+            "id": 1,
+            "title": "Entardecer Tóxico",
+            "description": "Tulipa-africana (Spathodea campanulata)",
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
             "photographer": "Ryan Ferreira",
-            "filename": "natureza-sob-fios.jpg"
+            "filename": "entardecer-toxico.jpg"
         },
         {
             "id": 6,
@@ -61,6 +61,16 @@ const galleryData = {
             "filename": "gota-do-sol.jpg"
         },
         {
+            "id": 13,
+            "title": "Olhos Castanhos Distantes",
+            "description": "Gato doméstico (Felis catus)",
+            "date": "12/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "olhos-castanhos-distantes.jpg"
+        },
+        {
             "id": 7,
             "title": "Nostalgia Distante",
             "description": "Campus da Fatec Itu e sua mata nativa",
@@ -69,16 +79,6 @@ const galleryData = {
             "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
             "photographer": "Ryan Ferreira",
             "filename": "distante-nostalgia.jpg"
-        },
-        {
-            "id": 8,
-            "title": "Sol Poente",
-            "description": "Campus da Fatec Itu e sua mata nativa",
-            "date": "12/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "sol-poente.jpg"
         },
         {
             "id": 9,
@@ -121,26 +121,6 @@ const galleryData = {
             "filename": "magnificente-predador.jpg"
         },
         {
-            "id": 13,
-            "title": "Olhos Castanhos Distantes",
-            "description": "Gato doméstico (Felis catus)",
-            "date": "12/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "olhos-castanhos-distantes.jpg"
-        },
-        {
-            "id": 14,
-            "title": "Melhor Lado",
-            "description": "Gato doméstico (Felis catus)",
-            "date": "12/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "melhor-lado.jpg"
-        },
-        {
             "id": 15,
             "title": "Distintas Cores",
             "description": "Ixora-rei (Ixora macrothyrsa)",
@@ -149,6 +129,16 @@ const galleryData = {
             "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
             "photographer": "Ryan Ferreira",
             "filename": "distintas-cores.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Visão dos Portões",
+            "description": "Árvores de sombra, Grama (Paspalum notatum) e plantas menores",
+            "date": "12/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "visao-dos-portoes.jpg"
         },
         {
             "id": 16,
@@ -179,7 +169,17 @@ const galleryData = {
             "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
             "photographer": "Ryan Ferreira",
             "filename": "desarmonia-pacifica.jpg"
-        }
+        },
+        {
+            "id": 5,
+            "title": "Natureza sob Fios",
+            "description": "Pata-de-vaca (Bauhinia forficata)",
+            "date": "12/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "natureza-sob-fios.jpg"
+        },
     ],
     "MotoG9": [
         {
