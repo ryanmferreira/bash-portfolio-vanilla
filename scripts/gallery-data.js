@@ -21,16 +21,6 @@ const galleryData = {
             "filename": "gigante-guerreiro-fungico.jpg"
         },
         {
-            "id": 8,
-            "title": "Sol Poente",
-            "description": "Campus da Fatec Itu e sua mata nativa",
-            "date": "12/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "sol-poente.jpg"
-        },
-        {
             "id": 4,
             "title": "Escurecer Campino",
             "description": "Mata nativa",
@@ -39,6 +29,16 @@ const galleryData = {
             "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
             "photographer": "Ryan Ferreira",
             "filename": "escurecer-campino.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Sol Poente",
+            "description": "Campus da Fatec Itu e sua mata nativa",
+            "date": "12/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung Galaxy A03 (SK Hynix Hi-4821Q, 48 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "sol-poente.jpg"
         },
         {
             "id": 1,
@@ -466,6 +466,16 @@ const galleryData = {
             "filename": "o-fantasma-dentre-as-folhas.jpg"
         },
         {
+            "id": 19,
+            "title": "Estrela Branca na Nebulosa Verde",
+            "description": "Pata-de-vaca (Bauhinia forficata)",
+            "date": "14/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "estrela-branca-na-nebulosa-verde.jpg"
+        },
+        {
             "id": 1,
             "title": "Chifres do Dragão",
             "description": "Helicônia-papagaio (Heliconia psittacorum)",
@@ -506,16 +516,6 @@ const galleryData = {
             "filename": "arvore-das-brasas.jpg"
         },
         {
-            "id": 5,
-            "title": "Chama da Vida",
-            "description": "Tulipa-africana (Spathodea campanulata)",
-            "date": "14/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "chama-da-vida.jpg"
-        },
-        {
             "id": 7,
             "title": "Placas Tortas, Árvores Retilíneas",
             "description": "Campus da Fatec Itu e sua mata nativa",
@@ -534,6 +534,26 @@ const galleryData = {
             "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
             "photographer": "Ryan Ferreira",
             "filename": "o-badalar-da-manha.jpg"
+        },
+        {
+            "id": 16,
+            "title": "A Delicadeza Encontra a Fragilidade",
+            "description": "Murta-de-cheiro (Murraya paniculata), Borboleta-branca (Ascia monuste)",
+            "date": "14/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "a-delicadeza-encontra-a-fragilidade.jpg"
+        },
+        {
+            "id": 15,
+            "title": "Viajante Descansando",
+            "description": "Murta-de-cheiro (Murraya paniculata), Besouro-preto (Alphitobius diaperinus)",
+            "date": "14/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "viajante-descansando.jpg"
         },
         // {
         //     "id": 9,
@@ -586,26 +606,6 @@ const galleryData = {
         //     "filename": "petalas-de-porcelana.jpg"
         // },
         {
-            "id": 15,
-            "title": "Viajante Descansando",
-            "description": "Murta-de-cheiro (Murraya paniculata), Besouro-preto (Alphitobius diaperinus)",
-            "date": "14/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "viajante-descansando.jpg"
-        },
-        {
-            "id": 16,
-            "title": "A Delicadeza Encontra a Fragilidade",
-            "description": "Murta-de-cheiro (Murraya paniculata), Borboleta-branca (Ascia monuste)",
-            "date": "14/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "a-delicadeza-encontra-a-fragilidade.jpg"
-        },
-        {
             "id": 18,
             "title": "Nenhum Brilho Dura Para Sempre",
             "description": "Murta-de-cheiro (Murraya paniculata)",
@@ -614,16 +614,6 @@ const galleryData = {
             "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
             "photographer": "Ryan Ferreira",
             "filename": "nenhum-brilho-dura-pra-sempre.jpg"
-        },
-        {
-            "id": 19,
-            "title": "Estrela Branca na Nebulosa Verde",
-            "description": "Pata-de-vaca (Bauhinia forficata)",
-            "date": "14/05/2026",
-            "location": "Fatec Itu",
-            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
-            "photographer": "Ryan Ferreira",
-            "filename": "estrela-branca-na-nebulosa-verde.jpg"
         },
         {
             "id": 20,
@@ -704,6 +694,16 @@ const galleryData = {
             "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
             "photographer": "Ryan Ferreira",
             "filename": "e-na-doenca.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Chama da Vida",
+            "description": "Tulipa-africana (Spathodea campanulata)",
+            "date": "14/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Samsung ES25 (Samsung SSU-06510, 12.2 MP)",
+            "photographer": "Ryan Ferreira",
+            "filename": "chama-da-vida.jpg"
         },
         {
             "id": 28,

@@ -76,6 +76,14 @@
         </div>
 
         <div class="gallery-div">
+            <div class="gallery-controls">
+                <div class="controls-row">
+                    <button class="tui-btn" onclick="zoomOut()">[ - Zoom Out ]</button>
+                    <button class="tui-btn" onclick="resetZoom()">[ Reset zoom ]</button>
+                    <button class="tui-btn" onclick="zoomIn()">[ Zoom In + ]</button>
+                </div>
+            </div>
+
             <div class="gallery-center">
                 <img class="fullscreen" id="fullscreen-image" src="../imgs/recup-photorec/chama-da-vida.jpg"
                     alt="[ Visualização ]">
@@ -83,13 +91,10 @@
 
             <div class="gallery-controls">
                 <div class="controls-row">
-                    <button class="tui-btn" onclick="ZoomOut()">[ - Zoom Out - ]</button>
-                    <button class="tui-btn" onclick="ZoomIn()">[ + Zoom In + ]</button>
-                </div>
-                <div class="controls-row">
                     <button class="tui-btn" onclick="previous()">[ <- Voltar ]</button>
-                    <button class="tui-btn" id="close-btn" onclick="toggleFullscreenView()">[ X Fechar X ]</button>
-                    <button class="tui-btn" onclick="next()">[ Avançar -> ]</button>
+                            <button class="tui-btn" id="close-btn" onclick="toggleImageFullscreen()">[ X Fechar
+                                ]</button>
+                            <button class="tui-btn" onclick="next()">[ Avançar -> ]</button>
                 </div>
             </div>
         </div>
@@ -153,14 +158,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                     </tbody>
                                 </table>
                             </div>
                         </section>
 
                         <section class="tui-box split-right">
-                            <span class="tui-box-title">-- Preview: <span id="view-title">MEDIA_001.JPG</span> --</span>
+                            <span class="tui-box-title">-- Preview: <span id="view-title">MEDIA_001.JPG</span>
+                                --</span>
                             <div class="preview-layout">
                                 <div class="preview-media">
                                     <img id="main-view-img" src="../imgs/recup-photorec/chama-da-vida.jpg"
@@ -169,11 +174,16 @@
 
                                 <div class="change-photo-buttons">
                                     <button id="previous" class="tui-btn" onclick="previous()">[ <- Anterior ]</button>
-                                            <button id="next" class="tui-btn" onclick="next()">[ Próximo -> ]</button>
+                                            <button id="next" class="tui-btn" onclick="next()">[ Próximo ->
+                                                ]</button>
                                 </div>
 
                                 <div class="preview-data">
-                                    <div class="ascii-table-header">METADADOS EXIF</div>
+                                    <div class="flex-row ascii-table-header">
+                                        <div>METADADOS EXIF</div>
+                                        <div id="pos">POS: 7/7</div>
+                                    </div>
+
                                     <div>[TITULO] : <span id="view-meta-title">Título do Arquivo</span></div>
                                     <div>[ARQUIVO] : <span id="meta-file">f0006272.jpg</span></div>
                                     <div>[DESCRICAO] : <span id="meta-desc">Mato (Matus)</span></div>
@@ -214,7 +224,8 @@
     </div>
 
     <script src="../scripts/gallery-data.js"></script>
-    <script src="../scripts/script.js"></script>
+    <script src="../scripts/global-scripts.js"></script>
+    <script src="../scripts/gallery-scripts.js"></script>
 </body>
 
 </html>

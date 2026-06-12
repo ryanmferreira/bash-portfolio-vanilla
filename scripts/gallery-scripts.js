@@ -1,96 +1,39 @@
-const HOME = "../pages/home.html"
-const GALLERY = "../pages/gallery.html"
-const ABOUT = "../pages/about.html"
-
-const windowWidth = window.innerWidth;
-
-var path = window.location.pathname;
-var fileName = path.split("/").pop();
+const fullscreenImg = document.getElementById("fullscreen-image");
+var scale = 0.25;
+var actuallZoom = 1;
 
 var currentFilter = 'all';
 
 var actualImageIndex = 0;
 var totalImages = 0;
 
-function toggleFullscreenView() {
-    const fullscreenImage = document.querySelector(".gallery-div");
-
-    const isVisible = window.getComputedStyle(fullscreenImage).display === "flex";
-
-    if (isVisible) {
-        fullscreenImage.style.display = "none";
-    } else {
-        fullscreenImage.style.display = "flex";
-    }
-
-    resetZoom();
-}
-
-function toggleShorcutsView() {
-    const modal = document.querySelector(".shortcuts-modal");
-
-    const isVisible = window.getComputedStyle(modal).display === "block";
-
-    if (isVisible) {
-        modal.style.display = "none";
-    } else {
-        modal.style.display = "block";
-    }
-}
-
-function updateFileCount() {
-    const storageItem = document.querySelector(".sidebar-item").innerText = `TOTAL: ${totalImages} arquivos`;;
-    const countFiles = document.getElementById("file-count").innerText = `FILES: ${totalImages}/${totalImages}`;
-    const totalFiles = document.getElementById("total-files").innerText = `TOTAL: ${totalImages} arquivos`;;
-    const filesFound = document.getElementById("files-found").innerText = `-- File Index: ${totalImages} items found --`;
-}
-
-const dropdowns = document.getElementsByClassName("menu-dropdown");
-
-for (const dropdown of dropdowns) {
-    const content = dropdown.querySelector(".dropdown-content");
-
-    if (content) {
-        dropdown.addEventListener("mouseenter", () => {
-            content.classList.add("show");
-        });
-
-        dropdown.addEventListener("mouseleave", () => {
-            content.classList.remove("show");
-        });
-    }
-}
-
-const fullscreenImg = document.getElementById("fullscreen-image");
-let scale = 0.25;
-let actuallZoom = 1;
-
-function ZoomIn() {
+function zoomIn() {
     actuallZoom += scale;
-    updateZoom();
+    updateImageScale();
 }
 
-function ZoomOut() {
+function zoomOut() {
     if (actuallZoom > 0.25) {
         actuallZoom -= scale;
-        updateZoom();
+        updateImageScale();
     }
 }
 
 function resetZoom() {
     actuallZoom = 1;
-    updateZoom();
+    updateImageScale();
 }
 
-function updateZoom() {
+function updateImageScale() {
     fullscreenImg.style.transform = `scale(${actuallZoom})`;
 }
 
 document.getElementById("main-view-img").addEventListener("click", () => {
-    toggleFullscreenView();
+    toggleImageFullscreen();
 });
 
-function updatePreview(selectedRow, imgSrc, title, desc, date, camera = "Desconhecida", photog = "Desconhecido") {
+
+function updateImagePreview(selectedRow, imgSrc, title, desc, date, camera = "Desconhecida", photog = "Desconhecido") {
     const mainImg = document.getElementById("main-view-img");
     const fullscreenImg = document.getElementById("fullscreen-image");
     const viewTitle = document.getElementById("view-title").innerText = title.toUpperCase();
@@ -183,7 +126,7 @@ function loadGallery(deviceFilter = 'all') {
         `;
 
         tr.addEventListener("click", () => {
-            updatePreview(tr, img.path, img.title, img.description, img.date, img.camera, img.photographer);
+            updateImagePreview(tr, img.path, img.title, img.description, img.date, img.camera, img.photographer);
             actualImageIndex = index;
         });
 
@@ -197,7 +140,7 @@ function loadGallery(deviceFilter = 'all') {
         const firstRow = tableBody.querySelector(".file-row");
         const firstDesc = firstImg.description;
 
-        updatePreview(firstRow, firstImg.path, firstImg.title, firstDesc, firstImg.date, firstImg.camera, firstImg.photographer);
+        updateImagePreview(firstRow, firstImg.path, firstImg.title, firstDesc, firstImg.date, firstImg.camera, firstImg.photographer);
     }
 
     totalImages = (fileList.length - 1);
@@ -217,35 +160,6 @@ function filterGallery(device) {
 
 document.addEventListener("DOMContentLoaded", () => {
     loadGallery();
-});
-
-
-document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-});
-
-document.addEventListener("keydown", (e) => {
-    if (e.key === '1') {
-        window.location.assign(HOME);
-    }
-
-    if (e.key === '2') {
-        window.location.assign(GALLERY);
-    }
-
-    if (e.key === '3') {
-        window.location.assign(ABOUT);
-    }
-
-    if (fileName === "gallery.html") {
-        if (e.key === 'ArrowLeft') {
-            previous();
-        }
-
-        if (e.key === 'ArrowRight') {
-            next();
-        }
-    }
 });
 
 function next() {
@@ -281,6 +195,7 @@ function selectImage() {
 
     if (element) {
         element.click();
+        updateFileCount()
 
         if (windowWidth > 720) {
             element.scrollIntoView({
@@ -292,9 +207,24 @@ function selectImage() {
     }
 }
 
-function debug() {
-    console.log("Windows Width: " + windowWidth)
-    console.log("Page: " + fileName)
-    console.log("Image index: " + actualImageIndex + "/" + totalImages);
-    console.log("Images total: " + totalImages);
+function updateFileCount() {
+    const storageItem = document.querySelector(".sidebar-item").innerText = `TOTAL: ${totalImages + 1} arquivos`;;
+    const countFiles = document.getElementById("file-count").innerText = `FILES: ${totalImages + 1}/${totalImages + 1}`;
+    const totalFiles = document.getElementById("total-files").innerText = `TOTAL: ${totalImages + 1} arquivos`;;
+    const filesFound = document.getElementById("files-found").innerText = `-- File Index: ${totalImages + 1} items found --`;
+    const filePos = document.getElementById("pos").innerText = `${actualImageIndex + 1} / ${totalImages + 1}`;
+}
+
+function toggleImageFullscreen() {
+    const fullscreenImage = document.querySelector(".gallery-div");
+
+    const isVisible = window.getComputedStyle(fullscreenImage).display === "flex";
+
+    if (isVisible) {
+        fullscreenImage.style.display = "none";
+    } else {
+        fullscreenImage.style.display = "flex";
+    }
+
+    resetZoom();
 }
