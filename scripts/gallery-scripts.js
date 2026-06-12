@@ -32,38 +32,39 @@ document.getElementById("main-view-img").addEventListener("click", () => {
     toggleImageFullscreen();
 });
 
-
 function updateImagePreview(selectedRow, imgSrc, title, desc, date, camera = "Desconhecida", photog = "Desconhecido") {
-    const mainImg = document.getElementById("main-view-img");
-    const fullscreenImg = document.getElementById("fullscreen-image");
-    const viewTitle = document.getElementById("view-title").innerText = title.toUpperCase();
-    const viewMetaTitle = document.getElementById("view-meta-title").innerText = title.toUpperCase();
-    const metaFile = document.getElementById("meta-file").innerText = imgSrc;
-    const metaDesc = document.getElementById("meta-desc").innerText = desc.toUpperCase();
-    const metaDate = document.getElementById("meta-date").innerText = date.toUpperCase();
-    const metaCamera = document.getElementById("meta-camera").innerText = camera.toUpperCase();
-    const metaPhotog = document.getElementById("meta-photog").innerText = photog.toUpperCase();
-    const metaStatus = document.getElementById("meta-status");
+    const imageList = [document.getElementById("main-view-img"), document.getElementById("fullscreen-image")];
 
-    mainImg.alt = "Nome da imagem: " + title;
-    fullscreenImg.alt = "Nome da imagem: " + title;
+    for (const image of imageList) {
+        image.src = imgSrc;
+        image.alt = "Nome da imagem: " + title;
+    }
 
-    mainImg.src = imgSrc;
-    fullscreenImg.src = imgSrc;
+    document.querySelectorAll("#view-title").forEach(el => el.innerText = title.toUpperCase());
+    document.querySelectorAll("#view-meta-title").forEach(el => el.innerText = title.toUpperCase());
+    document.querySelectorAll("#meta-file").forEach(el => el.innerText = imgSrc);
+    document.querySelectorAll("#meta-desc").forEach(el => el.innerText = desc.toUpperCase());
+    document.querySelectorAll("#meta-date").forEach(el => el.innerText = date.toUpperCase());
+    document.querySelectorAll("#meta-camera").forEach(el => el.innerText = camera.toUpperCase());
+    document.querySelectorAll("#meta-photog").forEach(el => el.innerText = photog.toUpperCase());
 
-    metaStatus.classList.remove("orange", "red");
+    const metaStatusList = document.querySelectorAll("#meta-status");
+    metaStatusList.forEach(status => status.classList.remove("orange", "red"));
+
     const img = new Image();
-
     img.onload = () => {
-        metaStatus.innerText = "INDEXED_OK";
-        metaStatus.classList.add("orange");
+        metaStatusList.forEach(status => {
+            status.innerText = "INDEXED_OK";
+            status.classList.add("orange");
+        });
     };
 
     img.onerror = () => {
-        metaStatus.innerText = "INDEXED_ERROR";
-        metaStatus.classList.add("red");
+        metaStatusList.forEach(status => {
+            status.innerText = "INDEXED_ERROR";
+            status.classList.add("red");
+        });
     };
-
     img.src = imgSrc;
 
     const rows = document.getElementsByClassName("file-row");

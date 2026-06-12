@@ -92,6 +92,10 @@ h3 {
     color: var(--color-text);
 }
 
+h4 {
+    color: var(--color-blue);
+}
+
 p {
     color: var(--color-text);
 }
