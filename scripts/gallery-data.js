@@ -189,7 +189,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "por-do-sol-afuscado.jpeg"
         },
         {
@@ -199,7 +199,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "fraco-brilho-da-noite.jpeg"
         },
         {
@@ -209,8 +209,18 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "orgulhoso-chapeu-branco.jpeg"
+        },
+        {
+            "id": null,
+            "title": "Orvalho Sereno",
+            "description": "Murta-de-cheiro (Murraya paniculata), Aranha-de-grama (Lycosa erythrognatha)",
+            "date": "12/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
+            "photographer": "Murilo Andrade",
+            "filename": "orvalho-sereno.jpeg"
         },
         {
             "id": 4,
@@ -219,7 +229,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "raises-que-tomam-meu-corpo.jpeg"
         },
         {
@@ -229,7 +239,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "visao-do-espreitador.jpeg"
         },
         {
@@ -239,8 +249,18 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "lado-oculto-da-lua.jpeg"
+        },
+        {
+            "id": null,
+            "title": "Alvorecer Dourado",
+            "description": "Campus da Fatec Itu e sua mata nativa",
+            "date": "12/05/2026",
+            "location": "Fatec Itu",
+            "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
+            "photographer": "Murilo Andrade",
+            "filename": "alvorecer-dourado.jpeg"
         },
         {
             "id": 7,
@@ -249,7 +269,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "escondendo-o-caule.jpeg"
         },
         {
@@ -259,7 +279,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "observador-pacivo.jpeg"
         },
         {
@@ -269,7 +289,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "tapete-de-neve.jpeg"
         },
         {
@@ -279,7 +299,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "espinhos-na-noite.jpeg"
         },
         {
@@ -289,7 +309,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "indefeso-incapaz.jpeg"
         },
         {
@@ -299,7 +319,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "oque-move-o-homem.jpeg"
         },
         {
@@ -309,7 +329,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "ainda-timida-pro-mundo.jpeg"
         },
         {
@@ -319,7 +339,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "natureza-forjada.jpeg"
         },
         {
@@ -329,7 +349,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "jaula-do-mundo.jpeg"
         },
         // Nota: O item 16 ("No Fim Foi Bom") não possui arquivo correspondente na pasta do tree
@@ -340,7 +360,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "folhas-de-jade.jpeg"
         },
         {
@@ -350,7 +370,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "galhos-sombreado.jpeg"
         },
         {
@@ -360,7 +380,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "falso-sol.jpeg"
         },
         {
@@ -370,7 +390,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "duas-vezes-doce.jpeg"
         },
         {
@@ -380,7 +400,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "ronronar-curioso.jpeg"
         },
         {
@@ -390,7 +410,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "fuga-do-concreto.jpeg"
         },
         {
@@ -400,7 +420,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "camada-purpura.jpeg"
         },
         {
@@ -410,7 +430,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "esperanca.jpeg"
         },
         {
@@ -420,7 +440,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "sonho-de-amor.jpeg"
         },
         {
@@ -430,7 +450,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "desesperanca.jpeg"
         },
         {
@@ -440,7 +460,7 @@ const galleryData = {
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
-            "photographer": "Murilo Rossi",
+            "photographer": "Murilo Andrade",
             "filename": "aberrante-pudor.jpeg"
         }
     ],
