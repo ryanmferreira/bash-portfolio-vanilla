@@ -254,13 +254,13 @@ const galleryData = {
         },
         {
             "id": null,
-            "title": "Alvorecer Dourado",
+            "title": "Ocaso Dourado",
             "description": "Campus da Fatec Itu e sua mata nativa",
             "date": "12/05/2026",
             "location": "Fatec Itu",
             "camera": "Moto G9 Play (Motorola XT2083, 48 MP)",
             "photographer": "Murilo Andrade",
-            "filename": "alvorecer-dourado.jpeg"
+            "filename": "ocaso-dourado.jpeg"
         },
         {
             "id": 7,
